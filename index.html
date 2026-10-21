@@ -12,7 +12,7 @@
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -29,6 +29,7 @@
               700: '#1d3365',
             },
             steel: {
+              950: '#080d1a',
               900: '#0f172a',
               800: '#1e293b',
               700: '#334155',
@@ -59,7 +60,7 @@
     }
   </script>
 
-  <!-- Custom Styles -->
+  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-white text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
@@ -68,8 +69,8 @@
   <div class="bg-navy-950 text-slate-300 text-xs py-2 px-4 border-b border-navy-800/80">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
       <div class="flex items-center space-x-2">
-        <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-blue-500/20 text-blue-400 border border-blue-400/30">UK STANDARDS</span>
-        <span class="text-slate-300 font-medium">BS EN ISO 3834 Weld Quality & CDM Regulations 2015 Site Safety Compliance</span>
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-400 border border-blue-400/30">UK STANDARDS</span>
+        <span class="text-slate-300 font-medium">BS EN ISO 3834 Weld Quality &bull; CDM Regulations 2015 Site Safety Compliance</span>
       </div>
       <div class="hidden sm:flex items-center space-x-4 text-slate-400 text-[11px]">
         <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block mr-1.5 animate-pulse"></span>Offline-First Architecture</span>
@@ -79,45 +80,40 @@
     </div>
   </div>
 
-  <!-- NAVIGATION -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-200">
+  <!-- NAVIGATION (Sticky Header with compact transition, Clean Typographic Logo) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/90 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="header-inner flex items-center justify-between h-20 transition-all duration-300">
         
-        <!-- Brand Logo -->
-        <a href="#home" class="flex items-center space-x-3 group">
-          <div class="w-11 h-11 rounded-lg bg-navy-900 flex items-center justify-center text-white shadow-md shadow-navy-950/20 group-hover:bg-blue-600 transition-colors duration-200">
-            <!-- Industrial Shield & Weld Arc Glyph -->
-            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="m9 12 2 2 4-4" stroke="#38bdf8"/>
-            </svg>
-          </div>
-          <div>
+        <!-- Clean Typographic Logo (No logo icon as requested) -->
+        <a href="#home" class="flex items-center group py-2" aria-label="TraceGuard Home">
+          <div class="flex flex-col">
             <div class="flex items-baseline space-x-1.5">
-              <span class="text-2xl font-extrabold tracking-tight text-navy-900 font-sans">TRACE<span class="text-blue-600">GUARD</span></span>
-              <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 tracking-wider">UK</span>
+              <span class="text-2xl font-black tracking-tight text-navy-900 font-sans group-hover:text-blue-600 transition-colors">
+                TRACE<span class="text-blue-600">GUARD</span>
+              </span>
+              <span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 tracking-wider">UK</span>
             </div>
-            <p class="text-[10px] text-slate-500 font-medium tracking-wide uppercase">Evidence Platform</p>
+            <p class="text-[10px] text-slate-500 font-semibold tracking-wider uppercase">Evidence Platform</p>
           </div>
         </a>
 
-        <!-- Desktop Navigation Links -->
+        <!-- Desktop Navigation Links with Active State Tracking -->
         <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
-          <a href="#home" class="hover:text-blue-600 transition-colors">Home</a>
-          <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
-          <a href="#platform" class="hover:text-blue-600 transition-colors">Platform</a>
-          <a href="#how-it-works" class="hover:text-blue-600 transition-colors">How It Works</a>
-          <a href="#market-pricing" class="hover:text-blue-600 transition-colors">Market Pricing</a>
-          <a href="#faq" class="hover:text-blue-600 transition-colors">FAQ</a>
+          <a href="#home" class="desktop-nav-link hover:text-blue-600 transition-colors py-1">Home</a>
+          <a href="#about" class="desktop-nav-link hover:text-blue-600 transition-colors py-1">About</a>
+          <a href="#platform" class="desktop-nav-link hover:text-blue-600 transition-colors py-1">Platform</a>
+          <a href="#how-it-works" class="desktop-nav-link hover:text-blue-600 transition-colors py-1">How It Works</a>
+          <a href="#market-pricing" class="desktop-nav-link hover:text-blue-600 transition-colors py-1">Market Pricing</a>
+          <a href="#faq" class="desktop-nav-link hover:text-blue-600 transition-colors py-1">FAQ</a>
         </nav>
 
         <!-- Right Header Action -->
         <div class="hidden md:flex items-center space-x-4">
-          <button type="button" class="open-pilot-modal inline-flex items-center justify-center px-5 py-2.5 rounded-lg text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-md hover:shadow-lg transition-all duration-200">
+          <button type="button" class="open-pilot-modal btn-primary inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-md shadow-blue-600/20">
             <span>Request a Pilot</span>
             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
             </svg>
           </button>
         </div>
@@ -127,7 +123,7 @@
           <button type="button" class="open-pilot-modal text-xs font-bold px-3 py-2 bg-blue-600 text-white rounded-lg">
             Pilot
           </button>
-          <button id="mobileMenuBtn" type="button" class="p-2 text-slate-700 hover:text-navy-900 focus:outline-none" aria-label="Toggle navigation">
+          <button id="mobileMenuBtn" type="button" class="p-2 text-slate-700 hover:text-navy-900 focus:outline-none" aria-label="Toggle navigation menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
             </svg>
@@ -138,31 +134,31 @@
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-50 bg-navy-950/60 backdrop-blur-sm">
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-50 bg-navy-950/70 backdrop-blur-sm">
       <div class="fixed top-0 right-0 w-4/5 max-w-sm h-full bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
         <div>
           <div class="flex items-center justify-between pb-6 border-b border-slate-100">
-            <span class="text-xl font-extrabold text-navy-900 tracking-tight">TRACE<span class="text-blue-600">GUARD</span></span>
-            <button id="closeMobileMenuBtn" class="p-2 text-slate-500 hover:text-slate-800">
+            <span class="text-xl font-black text-navy-900 tracking-tight">TRACE<span class="text-blue-600">GUARD</span></span>
+            <button id="closeMobileMenuBtn" class="p-2 text-slate-500 hover:text-slate-800" aria-label="Close menu">
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
               </svg>
             </button>
           </div>
           <nav class="mt-6 flex flex-col space-y-4 text-base font-semibold text-slate-700">
-            <a href="#home" class="mobile-nav-link hover:text-blue-600 py-1">Home</a>
-            <a href="#about" class="mobile-nav-link hover:text-blue-600 py-1">About</a>
-            <a href="#platform" class="mobile-nav-link hover:text-blue-600 py-1">Platform</a>
-            <a href="#how-it-works" class="mobile-nav-link hover:text-blue-600 py-1">How It Works</a>
-            <a href="#market-pricing" class="mobile-nav-link hover:text-blue-600 py-1">Market Pricing</a>
-            <a href="#faq" class="mobile-nav-link hover:text-blue-600 py-1">FAQ</a>
+            <a href="#home" class="mobile-nav-link hover:text-blue-600 py-1.5">Home</a>
+            <a href="#about" class="mobile-nav-link hover:text-blue-600 py-1.5">About</a>
+            <a href="#platform" class="mobile-nav-link hover:text-blue-600 py-1.5">Platform</a>
+            <a href="#how-it-works" class="mobile-nav-link hover:text-blue-600 py-1.5">How It Works</a>
+            <a href="#market-pricing" class="mobile-nav-link hover:text-blue-600 py-1.5">Market Pricing</a>
+            <a href="#faq" class="mobile-nav-link hover:text-blue-600 py-1.5">FAQ</a>
           </nav>
         </div>
         <div class="pt-6 border-t border-slate-100">
-          <button type="button" class="open-pilot-modal w-full py-3 px-4 rounded-lg bg-blue-600 text-white font-bold text-center shadow-md">
+          <button type="button" class="open-pilot-modal w-full py-3.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-center shadow-md">
             Request a Pilot
           </button>
-          <p class="text-center text-xs text-slate-400 mt-3 font-medium">UK SME Fabrication & Construction</p>
+          <p class="text-center text-xs text-slate-500 mt-3 font-medium">UK SME Fabrication & Construction</p>
         </div>
       </div>
     </div>
@@ -172,44 +168,44 @@
        1. HOME SECTION (Hero)
        ======================================================================== -->
   <section id="home" class="relative overflow-hidden bg-slate-50 pt-12 pb-20 lg:pt-20 lg:pb-32 bg-grid-pattern border-b border-slate-200">
-    <!-- Atmospheric Ambient Glows -->
+    <!-- Ambient Atmospheric Glows -->
     <div class="absolute top-0 right-1/4 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl pointer-events-none -z-0"></div>
     <div class="absolute top-1/3 left-10 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl pointer-events-none -z-0"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Top Tagline & Badge -->
+      <!-- Top Tagline & Badge (Staggered Animation) -->
       <div class="max-w-3xl mb-8">
-        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-700 mb-6">
+        <div class="reveal-init stagger-1 inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-700 mb-6">
           <span class="flex h-2 w-2 relative">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-600"></span>
           </span>
           <span class="text-blue-700 font-bold uppercase tracking-wider text-[11px]">TraceGuard Architecture</span>
           <span class="text-slate-300">|</span>
-          <span class="text-slate-600 font-medium">Mobile-First &middot; Offline-First Evidence Chain</span>
+          <span class="text-slate-600 font-medium">Mobile-First &bull; Offline-First Evidence Chain</span>
         </div>
 
         <!-- Main Headline -->
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 tracking-tight leading-[1.12] mb-6">
+        <h1 class="reveal-init stagger-2 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 tracking-tight leading-[1.12] mb-6">
           One Digital Evidence Platform for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-blue-500">Weld Quality</span>, <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700">Site Safety</span> and <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-600">Compliance</span>
         </h1>
 
         <!-- Supporting Text -->
-        <p class="text-lg sm:text-xl text-slate-600 leading-relaxed font-normal mb-8 max-w-2xl">
+        <p class="reveal-init stagger-3 text-lg sm:text-xl text-slate-600 leading-relaxed font-normal mb-8 max-w-2xl">
           TraceGuard helps SME fabrication and construction contractors replace paper-based compliance processes with a unified digital evidence system built around real site workflows.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
-          <button type="button" class="open-pilot-modal inline-flex items-center justify-center px-7 py-4 rounded-xl text-base font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xl shadow-blue-600/25 transition-all duration-200 hover:-translate-y-0.5">
+        <div class="reveal-init stagger-4 flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+          <button type="button" class="open-pilot-modal btn-primary inline-flex items-center justify-center px-7 py-4 rounded-xl text-base font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-xl shadow-blue-600/25">
             <span>Request a Pilot</span>
             <svg class="w-5 h-5 ml-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
             </svg>
           </button>
           
-          <a href="#platform" class="inline-flex items-center justify-center px-7 py-4 rounded-xl text-base font-bold text-navy-900 bg-white hover:bg-slate-100 border border-slate-300 shadow-sm transition-all duration-200 hover:-translate-y-0.5">
+          <a href="#platform" class="btn-secondary inline-flex items-center justify-center px-7 py-4 rounded-xl text-base font-bold text-navy-900 bg-white hover:bg-slate-100 border border-slate-300 shadow-sm">
             <span>Explore Platform</span>
             <svg class="w-4 h-4 ml-2 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -218,7 +214,7 @@
         </div>
 
         <!-- Trust Badges -->
-        <div class="mt-10 pt-8 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-semibold text-slate-600">
+        <div class="reveal-init stagger-5 mt-10 pt-8 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-semibold text-slate-600">
           <div class="flex items-center space-x-2">
             <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
@@ -241,7 +237,7 @@
       </div>
 
       <!-- HERO VISUAL: UK Construction & Welding Evidence Center (Interactive SaaS Mockup) -->
-      <div class="mt-8 lg:mt-4 relative">
+      <div class="reveal-init mt-8 lg:mt-4 relative">
         <div class="rounded-2xl bg-navy-900 border border-slate-700/80 shadow-2xl overflow-hidden text-white">
           
           <!-- Mockup Header Bar -->
@@ -252,7 +248,7 @@
                 <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
                 <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
               </div>
-              <span class="text-xs font-mono text-slate-400 ml-2">TraceGuard Supervisor Terminal &middot; v2.4</span>
+              <span class="text-xs font-mono text-slate-400 ml-2">TraceGuard Supervisor Terminal</span>
             </div>
 
             <!-- View Lane Switcher -->
@@ -269,7 +265,7 @@
             <div class="flex items-center space-x-2 text-xs font-mono">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <span class="text-emerald-400 font-semibold">OFFLINE READY</span>
-              <span class="text-slate-500 text-[11px]">(0 pending sync)</span>
+              <span class="text-slate-500 text-[11px]">(Local Sync Active)</span>
             </div>
           </div>
 
@@ -285,7 +281,7 @@
                   <div class="flex items-center justify-between border-b border-slate-700/60 pb-3">
                     <div>
                       <span class="text-[10px] font-mono font-bold uppercase text-blue-400 px-2 py-0.5 rounded bg-blue-950/60 border border-blue-800">QR-TASK-84920</span>
-                      <h4 class="text-base font-bold text-white mt-1">Joint WP-04 &middot; Column Flange Weld</h4>
+                      <h4 class="text-base font-bold text-white mt-1">Joint WP-04 &bull; Column Flange Weld</h4>
                     </div>
                     <span class="text-xs font-semibold px-2 py-1 rounded bg-emerald-900/60 text-emerald-300 border border-emerald-700">INSPECTION PASSED</span>
                   </div>
@@ -303,7 +299,7 @@
                     </div>
                     <div class="p-2.5 rounded bg-navy-900/80 border border-slate-800">
                       <span class="text-slate-400 block text-[10px] uppercase font-mono">Location & Site</span>
-                      <span class="font-bold text-slate-100">Bay 4 &middot; West Pier</span>
+                      <span class="font-bold text-slate-100">Bay 4 &bull; West Pier</span>
                       <span class="text-[10px] text-slate-400 block mt-0.5">Fabrication Yard A</span>
                     </div>
                     <div class="p-2.5 rounded bg-navy-900/80 border border-slate-800">
@@ -336,13 +332,12 @@
                 <div class="lg:col-span-4 bg-navy-850 rounded-xl p-5 border border-slate-700/80 space-y-4">
                   <div class="flex items-center justify-between border-b border-slate-700/60 pb-3">
                     <span class="text-xs font-bold text-slate-200">Weld Inspection Record</span>
-                    <span class="text-[10px] font-mono text-slate-400">NDT: 100% MPI + Visual</span>
+                    <span class="text-[10px] font-mono text-slate-400">NDT: Visual + MPI</span>
                   </div>
 
-                  <!-- Simulated Macro Photo Capture / Diagram -->
+                  <!-- Macro Photo Capture Representation -->
                   <div class="relative rounded-lg overflow-hidden bg-slate-950 border border-slate-800 p-4 flex flex-col items-center justify-center text-center">
                     <div class="w-full h-28 rounded bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700 flex items-center justify-center relative overflow-hidden">
-                      <!-- Weld Bead Representation -->
                       <div class="w-4/5 h-6 bg-gradient-to-r from-amber-600/40 via-blue-500/50 to-amber-600/40 rounded-full blur-[1px] border-t border-b border-blue-400/40 flex items-center justify-around px-2">
                         <span class="w-1.5 h-1.5 rounded-full bg-blue-300 animate-ping"></span>
                         <span class="text-[9px] font-mono text-blue-200 font-semibold">ISO 5817 Level B Conformance</span>
@@ -368,7 +363,7 @@
                   </div>
                 </div>
 
-                <!-- Right: Welder Performance & Live Metrics -->
+                <!-- Right: Quality Indicators & Checklists -->
                 <div class="lg:col-span-3 bg-navy-850 rounded-xl p-5 border border-slate-700/80 space-y-4">
                   <span class="text-xs font-bold text-slate-200 block border-b border-slate-700/60 pb-3">Quality KPI Live Feed</span>
                   
@@ -376,20 +371,20 @@
                     <div>
                       <div class="flex justify-between text-xs mb-1">
                         <span class="text-slate-400">First-Time Pass Rate</span>
-                        <span class="font-bold text-emerald-400 font-mono">98.4%</span>
+                        <span class="font-bold text-emerald-400 font-mono">Verified</span>
                       </div>
                       <div class="w-full bg-slate-800 rounded-full h-2">
-                        <div class="bg-emerald-500 h-2 rounded-full" style="width: 98.4%"></div>
+                        <div class="bg-emerald-500 h-2 rounded-full" style="width: 95%"></div>
                       </div>
                     </div>
 
                     <div>
                       <div class="flex justify-between text-xs mb-1">
-                        <span class="text-slate-400">Rework Rate</span>
-                        <span class="font-bold text-amber-400 font-mono">1.6%</span>
+                        <span class="text-slate-400">Rework Tracking</span>
+                        <span class="font-bold text-amber-400 font-mono">Logged</span>
                       </div>
                       <div class="w-full bg-slate-800 rounded-full h-2">
-                        <div class="bg-amber-500 h-2 rounded-full" style="width: 1.6%"></div>
+                        <div class="bg-amber-500 h-2 rounded-full" style="width: 5%"></div>
                       </div>
                     </div>
 
@@ -405,14 +400,14 @@
                   </div>
 
                   <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-400">
-                    <p class="leading-relaxed">All weld evidence cryptographically hashed and linked to digital job docket.</p>
+                    <p class="leading-relaxed">All weld evidence indexed and linked to digital job docket.</p>
                   </div>
                 </div>
 
               </div>
             </div>
 
-            <!-- Safety View (Hidden by default, toggled via JS) -->
+            <!-- Safety View (Toggled via JS) -->
             <div id="heroViewSafety" class="hidden transition-opacity duration-300">
               <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                 
@@ -432,21 +427,21 @@
                         <span class="text-slate-400 block text-[10px] uppercase font-mono">Attached RAMS Document</span>
                         <span class="font-bold text-slate-100">RAMS-SW-08-REV4.pdf</span>
                       </div>
-                      <span class="text-xs text-emerald-400 font-mono font-bold">Signed by 8/8</span>
+                      <span class="text-xs text-emerald-400 font-mono font-bold">Briefed</span>
                     </div>
 
                     <div class="p-2.5 rounded bg-navy-900/80 border border-slate-800 flex items-center justify-between">
                       <div>
                         <span class="text-slate-400 block text-[10px] uppercase font-mono">Hot Work Permit</span>
-                        <span class="font-bold text-slate-100">HWP-092 &middot; Exp. 17:30</span>
+                        <span class="font-bold text-slate-100">HWP-092 &bull; Active</span>
                       </div>
                       <span class="text-xs text-amber-400 font-mono font-bold">Fire Watch Posted</span>
                     </div>
                   </div>
 
                   <div class="p-3 rounded-lg bg-navy-950/70 border border-slate-800 text-xs">
-                    <span class="text-slate-300 block mb-1 font-semibold">Active Workforce on Task:</span>
-                    <span class="text-slate-400 text-[11px] leading-relaxed">4 Fabricators, 2 Riggers, 1 Appointed Supervisor (Induction & CSCS checked).</span>
+                    <span class="text-slate-300 block mb-1 font-semibold">Workforce on Task:</span>
+                    <span class="text-slate-400 text-[11px] leading-relaxed">Fabricators, Riggers, Appointed Supervisor (Induction & CSCS checked).</span>
                   </div>
                 </div>
 
@@ -454,14 +449,14 @@
                 <div class="lg:col-span-4 bg-navy-850 rounded-xl p-5 border border-slate-700/80 space-y-4">
                   <div class="flex items-center justify-between border-b border-slate-700/60 pb-3">
                     <span class="text-xs font-bold text-slate-200">Plant & Equipment Tracking</span>
-                    <span class="text-[10px] font-mono text-emerald-400">ALL IN SERVICE</span>
+                    <span class="text-[10px] font-mono text-emerald-400">IN SERVICE</span>
                   </div>
 
                   <div class="space-y-2 text-xs">
                     <div class="p-3 rounded-lg bg-navy-900/80 border border-slate-800 flex items-center justify-between">
                       <div>
                         <span class="font-bold text-white block">Miller Big Blue 500X (Welder Gen)</span>
-                        <span class="text-[10px] text-slate-400">PAT Tested &middot; Daily Pre-use Check Passed</span>
+                        <span class="text-[10px] text-slate-400">PAT Tested &bull; Daily Pre-use Check Passed</span>
                       </div>
                       <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
                     </div>
@@ -469,7 +464,7 @@
                     <div class="p-3 rounded-lg bg-navy-900/80 border border-slate-800 flex items-center justify-between">
                       <div>
                         <span class="font-bold text-white block">Genie Z45 MEWP (Boom Lift)</span>
-                        <span class="text-[10px] text-slate-400">LOLER 6-Month Valid &middot; Harnesses Inspected</span>
+                        <span class="text-[10px] text-slate-400">LOLER Valid &bull; Harnesses Inspected</span>
                       </div>
                       <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
                     </div>
@@ -490,8 +485,8 @@
                   
                   <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 space-y-2">
                     <div class="flex items-center justify-between text-xs">
-                      <span class="text-slate-400">Days Lost Injury:</span>
-                      <span class="font-bold text-emerald-400 font-mono">0 Days</span>
+                      <span class="text-slate-400">Lost Time Incidents:</span>
+                      <span class="font-bold text-emerald-400 font-mono">0</span>
                     </div>
                     <div class="flex items-center justify-between text-xs">
                       <span class="text-slate-400">Near-Misses Logged:</span>
@@ -504,7 +499,7 @@
                   </div>
 
                   <div class="p-3 rounded-lg bg-amber-950/30 border border-amber-800/50 text-[11px] text-amber-200/90">
-                    <strong>CDM Principal Contractor Feed:</strong> Daily compliance export generated for handover.
+                    <strong>CDM Principal Contractor Feed:</strong> Compliance export generated for handover.
                   </div>
                 </div>
 
@@ -520,7 +515,7 @@
               <span class="text-slate-400 font-mono text-[11px]">Task &rarr; Worker &rarr; Location &rarr; Date &rarr; Compliance Evidence</span>
             </div>
             <div class="flex items-center space-x-2">
-              <span class="text-slate-400 text-xs">Verified by TraceGuard Mobile Core</span>
+              <span class="text-slate-400 text-xs font-medium">TraceGuard Mobile Core</span>
             </div>
           </div>
 
@@ -538,13 +533,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="max-w-3xl mb-16">
+      <div class="reveal-init max-w-3xl mb-16">
         <span class="text-xs font-bold font-mono tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">About TraceGuard</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-900 tracking-tight mt-4 mb-6">
           Why TraceGuard Exists: The Dual-Evidence Challenge in Construction & Fabrication
         </h2>
         <p class="text-lg text-slate-600 leading-relaxed">
-          Construction and fabrication teams require rigorous, indisputable evidence for four non-negotiable milestones: 
+          Construction and fabrication teams require reliable evidence for: 
           <span class="text-navy-900 font-semibold">Quality inspections, Safety compliance, Client handovers, and Regulatory checks</span>.
         </p>
       </div>
@@ -553,7 +548,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-20">
         
         <!-- Left: The Industry Problem -->
-        <div class="lg:col-span-5 bg-slate-50 rounded-2xl p-7 sm:p-8 border border-slate-200 shadow-sm">
+        <div class="reveal-init lg:col-span-5 bg-slate-50 rounded-2xl p-7 sm:p-8 border border-slate-200 shadow-sm">
           <div class="flex items-center space-x-3 mb-6">
             <div class="w-10 h-10 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center font-bold">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -567,34 +562,34 @@
           </div>
 
           <p class="text-sm text-slate-600 mb-5 leading-relaxed">
-            Construction and fabrication businesses currently manage critical project evidence through disconnected, error-prone channels:
+            Construction and fabrication businesses currently manage important evidence through:
           </p>
 
           <ul class="space-y-3 text-sm text-slate-700 font-medium mb-8">
             <li class="flex items-center space-x-3">
               <span class="w-2 h-2 rounded-full bg-rose-500"></span>
-              <span>Paper weld records lost or soiled on the shop floor</span>
+              <span>Paper weld records</span>
             </li>
             <li class="flex items-center space-x-3">
               <span class="w-2 h-2 rounded-full bg-rose-500"></span>
-              <span>Phone photographs buried in WhatsApp group chats</span>
+              <span>Phone photographs</span>
             </li>
             <li class="flex items-center space-x-3">
               <span class="w-2 h-2 rounded-full bg-rose-500"></span>
-              <span>Spreadsheets disconnected from actual site reality</span>
+              <span>Spreadsheets</span>
             </li>
             <li class="flex items-center space-x-3">
               <span class="w-2 h-2 rounded-full bg-rose-500"></span>
-              <span>Manual safety documents filed weeks after task completion</span>
+              <span>Manual safety documents</span>
             </li>
             <li class="flex items-center space-x-3">
               <span class="w-2 h-2 rounded-full bg-rose-500"></span>
-              <span>Verbal site updates with zero audit traceability</span>
+              <span>Verbal site updates</span>
             </li>
           </ul>
 
           <div class="p-4 rounded-xl bg-rose-50/70 border border-rose-200">
-            <h4 class="text-xs font-bold uppercase tracking-wider text-rose-800 mb-2">Severe Friction Points Caused:</h4>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-rose-800 mb-2">This creates difficulties during:</h4>
             <div class="grid grid-cols-2 gap-2 text-xs font-semibold text-rose-900">
               <span class="flex items-center">&bull; Client Audits</span>
               <span class="flex items-center">&bull; HSE Inspections</span>
@@ -604,8 +599,8 @@
           </div>
         </div>
 
-        <!-- Right: TraceGuard's Dual-Evidence Breakthrough -->
-        <div class="lg:col-span-7 bg-navy-900 rounded-2xl p-7 sm:p-10 border border-slate-800 text-white shadow-xl">
+        <!-- Right: TraceGuard's Dual-Evidence Solution -->
+        <div class="reveal-init lg:col-span-7 bg-navy-900 rounded-2xl p-7 sm:p-10 border border-slate-800 text-white shadow-xl">
           <div class="flex items-center space-x-3 mb-6">
             <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -619,11 +614,7 @@
           </div>
 
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-            In SME fabrication workshops and construction sites, a supervisor is rarely confined to just one role. On any given project, the <strong class="text-white">same supervisor simultaneously manages welding quality, safety compliance, and labour allocation</strong>.
-          </p>
-
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
-            Treating quality and safety as separate software tools creates double the administrative burden. TraceGuard unites both domains into one intuitive mobile interface:
+            TraceGuard combines quality evidence and safety evidence into one unified digital compliance platform. Both areas are connected because SME site supervisors often manage <strong class="text-white">welding quality, safety compliance, and labour allocation on the same project</strong>.
           </p>
 
           <!-- The Two Connected Pillars -->
@@ -636,7 +627,7 @@
                 <span>Quality Evidence</span>
               </div>
               <p class="text-xs text-slate-300 leading-relaxed">
-                Digital weld inspection records, WPS/WPQR references, welder qualifications, and client-ready compliance certification under BS EN ISO 3834.
+                Digital weld inspection and certification records.
               </p>
             </div>
 
@@ -648,110 +639,96 @@
                 <span>Safety & Resource Evidence</span>
               </div>
               <p class="text-xs text-slate-300 leading-relaxed">
-                Site safety documentation, digital RAMS sign-offs, plant & equipment inspection verification, and real-time workforce allocation tracking.
+                Site safety documentation, workforce allocation and operational tracking.
               </p>
             </div>
           </div>
 
           <!-- Digital Evidence Chain Banner -->
           <div class="p-4 rounded-xl bg-blue-950/60 border border-blue-700/60 text-xs">
-            <span class="text-blue-300 font-semibold block mb-1">Complete Digital Evidence Chain:</span>
+            <span class="text-blue-300 font-semibold block mb-2">Complete Digital Evidence Chain:</span>
             <div class="flex flex-wrap items-center gap-2 font-mono text-slate-200">
-              <span class="px-2 py-0.5 rounded bg-blue-900">Task</span>
+              <span class="px-2.5 py-1 rounded bg-blue-900 border border-blue-800">Task</span>
               <span class="text-slate-500">&rarr;</span>
-              <span class="px-2 py-0.5 rounded bg-blue-900">Worker</span>
+              <span class="px-2.5 py-1 rounded bg-blue-900 border border-blue-800">Worker</span>
               <span class="text-slate-500">&rarr;</span>
-              <span class="px-2 py-0.5 rounded bg-blue-900">Location</span>
+              <span class="px-2.5 py-1 rounded bg-blue-900 border border-blue-800">Location</span>
               <span class="text-slate-500">&rarr;</span>
-              <span class="px-2 py-0.5 rounded bg-blue-900">Date</span>
+              <span class="px-2.5 py-1 rounded bg-blue-900 border border-blue-800">Date</span>
               <span class="text-slate-500">&rarr;</span>
-              <span class="px-2 py-0.5 rounded bg-emerald-900 text-emerald-300 border border-emerald-600">Compliance Evidence</span>
+              <span class="px-2.5 py-1 rounded bg-emerald-900 text-emerald-300 border border-emerald-600 font-bold">Compliance Evidence</span>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- FOUNDERS INFORMATION SUBSECTION -->
+      <!-- FOUNDERS INFORMATION SUBSECTION (Clean typography, NO photos/avatar boxes as instructed) -->
       <div class="mt-16 pt-16 border-t border-slate-200">
-        <div class="max-w-2xl mb-12">
-          <span class="text-xs font-bold font-mono tracking-wider text-slate-500 uppercase">Leadership & Foundations</span>
+        <div class="reveal-init max-w-2xl mb-12">
+          <span class="text-xs font-bold font-mono tracking-wider text-slate-500 uppercase">Leadership</span>
           <h3 class="text-2xl sm:text-3xl font-extrabold text-navy-900 mt-2">
-            Built by Field Practitioners and Commercial Specialists
+            Founders Information
           </h3>
           <p class="text-slate-600 text-sm mt-3">
-            TraceGuard was conceptualised directly on fabrication shop floors and active construction sites to solve real operational bottlenecks.
+            Built from practical site supervision and commercial operational discipline.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           
-          <!-- Founder 1: Akashkumar Chaudhary -->
-          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex items-start space-x-4 mb-6">
-              <div class="w-14 h-14 rounded-xl bg-navy-900 text-white flex items-center justify-center font-extrabold text-xl flex-shrink-0 shadow-md">
-                AC
-              </div>
-              <div>
-                <span class="text-xs font-mono font-bold text-blue-600 uppercase bg-blue-50 px-2 py-0.5 rounded">Founder</span>
-                <h4 class="text-xl font-bold text-navy-900 mt-1">Akashkumar Chaudhary</h4>
-                <p class="text-xs text-slate-500 mt-0.5">Site Operations & Quality Assurance Lead</p>
-              </div>
+          <!-- Founder: Akashkumar Chaudhary -->
+          <div class="reveal-init bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="mb-6 pb-4 border-b border-slate-100">
+              <span class="text-xs font-mono font-bold text-blue-600 uppercase bg-blue-50 px-2.5 py-1 rounded border border-blue-100">Founder</span>
+              <h4 class="text-2xl font-extrabold text-navy-900 mt-2">Akashkumar Chaudhary</h4>
             </div>
 
-            <!-- Background & Credentials -->
-            <div class="space-y-4 text-xs text-slate-600">
-              <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
-                <span class="font-bold text-slate-900 block mb-1">Industry Background:</span>
-                <ul class="list-disc list-inside space-y-1 text-slate-600">
+            <div class="space-y-5 text-xs text-slate-600">
+              <div>
+                <span class="font-bold text-slate-900 uppercase tracking-wider text-[11px] block mb-2 font-mono">Background:</span>
+                <ul class="list-disc list-inside space-y-1.5 text-slate-700 font-medium">
                   <li>Assistant Site Supervisor at Narmade Enterprise</li>
                   <li>Former Welder Supervisor at Shree Mahashakti Engineering Works</li>
                 </ul>
               </div>
 
               <div>
-                <span class="font-bold text-slate-900 block mb-2">Hands-on Domain Experience:</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Industrial Welding</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Fabrication</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Quality Assurance</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Safety Regulations</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Resource Management</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Team Supervision</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Site Planning</span>
+                <span class="font-bold text-slate-900 uppercase tracking-wider text-[11px] block mb-2 font-mono">Experience:</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Industrial welding</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Fabrication</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Quality assurance</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Safety regulations</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Resource management</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Team supervision</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Site planning</span>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Co-Founder: Mahendra Chothabhai Chaudhari -->
-          <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-            <div class="flex items-start space-x-4 mb-6">
-              <div class="w-14 h-14 rounded-xl bg-slate-800 text-white flex items-center justify-center font-extrabold text-xl flex-shrink-0 shadow-md">
-                MC
-              </div>
-              <div>
-                <span class="text-xs font-mono font-bold text-slate-700 uppercase bg-slate-100 px-2 py-0.5 rounded">Co-Founder</span>
-                <h4 class="text-xl font-bold text-navy-900 mt-1">Mahendra Chothabhai Chaudhari</h4>
-                <p class="text-xs text-slate-500 mt-0.5">Commercial Architecture & Operations Lead</p>
-              </div>
+          <div class="reveal-init bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="mb-6 pb-4 border-b border-slate-100">
+              <span class="text-xs font-mono font-bold text-slate-700 uppercase bg-slate-100 px-2.5 py-1 rounded border border-slate-200">Co-Founder</span>
+              <h4 class="text-2xl font-extrabold text-navy-900 mt-2">Mahendra Chothabhai Chaudhari</h4>
             </div>
 
-            <!-- Background & Credentials -->
-            <div class="space-y-4 text-xs text-slate-600">
-              <div class="p-3 rounded-lg bg-slate-50 border border-slate-100">
-                <span class="font-bold text-slate-900 block mb-1">Academic Background:</span>
-                <p class="text-slate-700 font-semibold">Bachelor of Commerce (B.Com)</p>
+            <div class="space-y-5 text-xs text-slate-600">
+              <div>
+                <span class="font-bold text-slate-900 uppercase tracking-wider text-[11px] block mb-2 font-mono">Background:</span>
+                <p class="text-slate-800 font-semibold text-sm">Bachelor of Commerce</p>
               </div>
 
               <div>
-                <span class="font-bold text-slate-900 block mb-2">Core Commercial Expertise:</span>
-                <div class="flex flex-wrap gap-1.5">
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Financial Management</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Accounting</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Commercial Modelling</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Subscription Pricing Structure</span>
-                  <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 font-medium">Business Operations</span>
+                <span class="font-bold text-slate-900 uppercase tracking-wider text-[11px] block mb-2 font-mono">Expertise:</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Financial management</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Accounting</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Commercial modelling</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Subscription pricing structure</span>
+                  <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-700 font-medium">Business operations</span>
                 </div>
               </div>
             </div>
@@ -771,52 +748,47 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="max-w-3xl mb-12">
-        <span class="text-xs font-bold font-mono tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Platform Architecture</span>
+      <div class="reveal-init max-w-3xl mb-12">
+        <span class="text-xs font-bold font-mono tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Platform Modules</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-900 tracking-tight mt-4 mb-4">
-          Three Interconnected Modules Engineered for Rigorous Site Realities
+          Three Major Product Modules
         </h2>
         <p class="text-lg text-slate-600 leading-relaxed">
-          TraceGuard unites allocation, weld quality inspection, and site safety resourcing into one cohesive operational workflow.
+          TraceGuard connects resource allocation, coded weld quality management, and site safety resourcing into one digital architecture.
         </p>
       </div>
 
-      <!-- Module Filter / Quick Selector -->
-      <div class="flex flex-wrap gap-2 mb-12">
-        <button type="button" data-module="all" class="platform-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-md transition-all">
-          All Modules (Full Suite)
+      <!-- Module Interactive Filter Tabs -->
+      <div class="reveal-init flex flex-wrap gap-2 mb-12" role="tablist" aria-label="Platform module filters">
+        <button type="button" data-module="all" class="platform-tab-btn px-4 py-2.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow-md transition-all" role="tab" aria-selected="true">
+          All Modules
         </button>
-        <button type="button" data-module="core" class="platform-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+        <button type="button" data-module="core" class="platform-tab-btn px-4 py-2.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all" role="tab" aria-selected="false">
           Module 1: Shared Core
         </button>
-        <button type="button" data-module="quality" class="platform-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+        <button type="button" data-module="quality" class="platform-tab-btn px-4 py-2.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all" role="tab" aria-selected="false">
           Module 2: Quality Lane
         </button>
-        <button type="button" data-module="safety" class="platform-tab-btn px-4 py-2 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all">
+        <button type="button" data-module="safety" class="platform-tab-btn px-4 py-2.5 rounded-lg text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all" role="tab" aria-selected="false">
           Module 3: Safety & Resourcing Lane
         </button>
       </div>
 
-      <!-- The Three Major Product Modules -->
-      <div class="space-y-10">
+      <!-- The Three Product Modules -->
+      <div class="space-y-12">
         
         <!-- MODULE 1: SHARED ALLOCATION & CAPTURE CORE -->
-        <div data-module="core" class="platform-module-card bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm transition-all duration-300">
+        <div data-module="core" class="platform-module-card reveal-init bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm transition-all duration-300">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-slate-100">
             <div>
               <div class="flex items-center space-x-2 text-blue-600 text-xs font-mono font-bold uppercase mb-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
-                <span>Module 01</span>
+                <span>Module 1</span>
               </div>
               <h3 class="text-2xl sm:text-3xl font-extrabold text-navy-900">SHARED ALLOCATION & CAPTURE CORE</h3>
               <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
                 The foundation of TraceGuard where every task receives a digital allocation record connecting worker, task, site, date and evidence.
               </p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-50 text-blue-700 border border-blue-200">
-                Core Engine
-              </span>
             </div>
           </div>
 
@@ -824,88 +796,58 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
             
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-sm mb-1.5">QR Task Allocation</h4>
-              <p class="text-xs text-slate-600 leading-relaxed">Create tasks with unique QR-linked identifiers for rapid field scanning and immediate docket recall.</p>
+              <p class="text-xs text-slate-600 leading-relaxed">Create tasks with unique QR-linked identifiers.</p>
             </div>
 
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-sm mb-1.5">Skill-Based Labour Matching</h4>
-              <p class="text-xs text-slate-600 leading-relaxed">Match worker skills and qualifications with assigned tasks, preventing unqualified operation before work begins.</p>
+              <p class="text-xs text-slate-600 leading-relaxed">Match worker skills and qualifications with assigned tasks.</p>
             </div>
 
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-sm mb-1.5">RAMS Attachment</h4>
-              <p class="text-xs text-slate-600 leading-relaxed">Attach Risk Assessment and Method Statements directly to tasks for mandatory worker briefing and verification.</p>
+              <p class="text-xs text-slate-600 leading-relaxed">Attach Risk Assessment and Method Statements directly to tasks.</p>
             </div>
 
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-sm mb-1.5">Offline-First Capture</h4>
-              <p class="text-xs text-slate-600 leading-relaxed">Capture evidence reliably even in deep fabrication basements or remote sites with poor connectivity; syncs automatically.</p>
+              <p class="text-xs text-slate-600 leading-relaxed">Capture evidence even in poor connectivity areas.</p>
             </div>
 
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-sm mb-1.5">Digital Sign-Off Chain</h4>
-              <p class="text-xs text-slate-600 leading-relaxed">Capture immutable approvals sequentially from workers, supervisors, and independent third-party inspectors.</p>
+              <p class="text-xs text-slate-600 leading-relaxed">Capture approvals from workers, supervisors and inspectors.</p>
             </div>
 
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </div>
-              <h4 class="font-bold text-slate-900 text-sm mb-1.5">Attendance & Allocation Tracking</h4>
-              <p class="text-xs text-slate-600 leading-relaxed">Track who worked on what task with exact timestamps and active labour hours for crystal clear audit trails.</p>
+              <h4 class="font-bold text-slate-900 text-sm mb-1.5">Attendance and Allocation Tracking</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">Track who worked on what task.</p>
             </div>
 
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card md:col-span-2 lg:col-span-3">
-              <div class="flex items-start space-x-3">
-                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold flex-shrink-0">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                </div>
-                <div>
-                  <h4 class="font-bold text-slate-900 text-sm mb-1">Incident and Near-Miss Logging</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Record safety events and near-miss occurrences digitally at point-of-incident, triggering immediate supervisor review.</p>
-                </div>
-              </div>
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Incident and Near-Miss Logging</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">Record safety events digitally.</p>
             </div>
 
           </div>
         </div>
 
         <!-- MODULE 2: QUALITY LANE -->
-        <div data-module="quality" class="platform-module-card bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm transition-all duration-300">
+        <div data-module="quality" class="platform-module-card reveal-init bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm transition-all duration-300">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-slate-100">
             <div>
               <div class="flex items-center space-x-2 text-blue-600 text-xs font-mono font-bold uppercase mb-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-blue-600"></span>
-                <span>Module 02</span>
+                <span>Module 2</span>
               </div>
               <div class="flex items-baseline space-x-3 flex-wrap">
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-navy-900">QUALITY LANE</h3>
                 <span class="text-sm font-semibold text-blue-600">"Weld Quality Evidence Management"</span>
               </div>
               <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-                A dedicated workflow for coded welding activities, engineered specifically around BS EN ISO 3834 requirements and structural fabrication standards.
+                A dedicated workflow for coded welding activities.
               </p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800 border border-blue-300">
-                Weld Traceability
-              </span>
             </div>
           </div>
 
@@ -914,104 +856,70 @@
             
             <!-- Weld Evidence Capture -->
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-sm mb-2">Weld Evidence Capture</h4>
-              <p class="text-xs text-slate-600 mb-3">Store high-resolution evidence for each joint:</p>
-              <ul class="text-[11px] space-y-1 text-slate-600 font-medium list-disc list-inside">
-                <li>Weld photographs (Macro/Visual)</li>
-                <li>NDT results (MPI, DPI, UT, RT)</li>
-                <li>Welder ID & qualification stamp</li>
-                <li>WPS / WPQR references</li>
+              <p class="text-xs text-slate-500 mb-2 font-medium">Store:</p>
+              <ul class="text-xs space-y-1 text-slate-600 font-medium list-disc list-inside">
+                <li>Weld photographs</li>
+                <li>NDT results</li>
+                <li>Welder ID</li>
+                <li>WPS/WPQR references</li>
                 <li>Welding process information</li>
               </ul>
             </div>
 
             <!-- Compliance Checklists -->
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-sm mb-2">Compliance Checklists</h4>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                Support welding quality workflows including comprehensive <strong>BS EN ISO 3834 requirements</strong>, pre-heat checks, interpass temperatures, and consumable batch controls.
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Support welding quality workflows including BS EN ISO 3834 requirements.
               </p>
-              <span class="text-[10px] font-mono font-semibold text-blue-700 bg-blue-50 px-2 py-1 rounded inline-block">BS EN ISO 3834-2 / EN 1090-2</span>
             </div>
 
             <!-- Defect and Rework Tracking -->
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-sm mb-2">Defect and Rework Tracking</h4>
-              <p class="text-xs text-slate-600 mb-3">Complete corrective action loop:</p>
-              <ul class="text-[11px] space-y-1 text-slate-600 font-medium list-disc list-inside">
-                <li>Failed welds logging</li>
-                <li>Gouging & correction tracking</li>
-                <li>Mandatory re-inspections</li>
-                <li>Root cause categorization</li>
+              <p class="text-xs text-slate-500 mb-2 font-medium">Track:</p>
+              <ul class="text-xs space-y-1 text-slate-600 font-medium list-disc list-inside">
+                <li>Failed welds</li>
+                <li>Corrections</li>
+                <li>Re-inspections</li>
               </ul>
             </div>
 
             <!-- Automatic Certificate Generation -->
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-              </div>
-              <h4 class="font-bold text-slate-900 text-sm mb-1.5">Automatic Certificate Generation</h4>
-              <p class="text-xs text-slate-600 leading-relaxed">Generate client-ready compliance certificates and EN 10204 3.1 inspection documentation with a single tap.</p>
+              <h4 class="font-bold text-slate-900 text-sm mb-2">Automatic Certificate Generation</h4>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Generate client-ready compliance certificates.
+              </p>
             </div>
 
             <!-- Welder Performance Dashboard -->
             <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 feature-card md:col-span-2">
-              <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold mb-3">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-sm mb-2">Welder Performance Dashboard</h4>
-              <p class="text-xs text-slate-600 leading-relaxed mb-3">
-                Monitor individual and workshop-wide quality metrics to eliminate defects before client delivery:
-              </p>
-              <div class="grid grid-cols-3 gap-3 text-center">
-                <div class="bg-white p-2.5 rounded border border-slate-200">
-                  <span class="text-[10px] text-slate-400 block uppercase font-mono">First-Time Pass</span>
-                  <span class="font-bold text-emerald-600 text-xs">Continuous Metric</span>
-                </div>
-                <div class="bg-white p-2.5 rounded border border-slate-200">
-                  <span class="text-[10px] text-slate-400 block uppercase font-mono">Rework Rate</span>
-                  <span class="font-bold text-amber-600 text-xs">Cost Impact</span>
-                </div>
-                <div class="bg-white p-2.5 rounded border border-slate-200">
-                  <span class="text-[10px] text-slate-400 block uppercase font-mono">Inspection Status</span>
-                  <span class="font-bold text-blue-600 text-xs">Audit Readiness</span>
-                </div>
-              </div>
+              <p class="text-xs text-slate-500 mb-2 font-medium">Track:</p>
+              <ul class="text-xs space-y-1 text-slate-600 font-medium list-disc list-inside">
+                <li>First-time pass rate</li>
+                <li>Rework rate</li>
+                <li>Inspection performance</li>
+              </ul>
             </div>
 
           </div>
         </div>
 
         <!-- MODULE 3: SAFETY & RESOURCING LANE -->
-        <div data-module="safety" class="platform-module-card bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm transition-all duration-300">
+        <div data-module="safety" class="platform-module-card reveal-init bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm transition-all duration-300">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-slate-100">
             <div>
               <div class="flex items-center space-x-2 text-amber-600 text-xs font-mono font-bold uppercase mb-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
-                <span>Module 03</span>
+                <span>Module 3</span>
               </div>
               <div class="flex items-baseline space-x-3 flex-wrap">
                 <h3 class="text-2xl sm:text-3xl font-extrabold text-navy-900">SAFETY & RESOURCING LANE</h3>
                 <span class="text-sm font-semibold text-amber-600">"Complete Site Safety Management"</span>
               </div>
-              <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-3xl leading-relaxed">
-                Total site safety governance aligned with UK Construction (Design and Management) Regulations 2015.
-              </p>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-50 text-amber-800 border border-amber-300">
-                CDM 2015 Compliant
-              </span>
             </div>
           </div>
 
@@ -1019,37 +927,26 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
             
             <div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-base mb-2">Plant & Equipment Tracking</h4>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Monitor equipment allocation and inspection status across workshops and sites. Ensure LOLER, PUWER, and daily pre-use inspections are logged and current.
+                Monitor equipment allocation and inspection status.
               </p>
             </div>
 
             <div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-base mb-2">CDM-Aligned Reporting</h4>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Support UK construction safety reporting with standardized health and safety file records, site inductions, and principal contractor compliance packs.
+                Support construction safety reporting.
               </p>
             </div>
 
             <div class="p-6 rounded-xl bg-slate-50 border border-slate-200/80 feature-card">
-              <div class="w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold mb-4">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-              </div>
               <h4 class="font-bold text-slate-900 text-base mb-2">Site Progress Reporting</h4>
-              <p class="text-xs text-slate-600 leading-relaxed mb-2">
-                Track live operational indicators directly from supervisor handhelds:
-              </p>
-              <ul class="text-[11px] space-y-1 text-slate-600 font-medium list-disc list-inside">
-                <li>Work progress by zone and joint</li>
-                <li>Site problems & weather delays</li>
-                <li>Real-time labour headcount & hours</li>
+              <p class="text-xs text-slate-500 mb-2 font-medium">Track:</p>
+              <ul class="text-xs space-y-1 text-slate-600 font-medium list-disc list-inside">
+                <li>Work progress</li>
+                <li>Site problems</li>
+                <li>Labour status</li>
               </ul>
             </div>
 
@@ -1058,116 +955,55 @@
 
       </div>
 
-      <!-- ====================================================================
-           ADDITIONAL PLATFORM FEATURES (Highlighted Section)
-           ==================================================================== -->
+      <!-- ADDITIONAL PLATFORM FEATURES (Highlighted Section) -->
       <div class="mt-16 pt-16 border-t border-slate-200">
-        <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded">Architectural Innovations</span>
+        <div class="reveal-init text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-3 py-1 rounded">Integration Highlights</span>
           <h3 class="text-2xl sm:text-3xl font-extrabold text-navy-900 mt-2">
-            Highlighted TraceGuard Platform Advantages
+            Additional Platform Features
           </h3>
-          <p class="text-sm text-slate-600 mt-2">
-            The power of uniting quality engineering and site safety under a single data architecture.
-          </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <!-- Highlight 1: Unified Compliance Pack -->
-          <div class="bg-gradient-to-br from-navy-900 to-navy-850 text-white rounded-2xl p-8 border border-slate-800 shadow-xl relative overflow-hidden flex flex-col justify-between">
-            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
+          <div class="reveal-init bg-navy-900 text-white rounded-2xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-xl bg-blue-600/30 border border-blue-400/40 text-blue-300 flex items-center justify-center font-bold mb-6">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/></svg>
-              </div>
               <h4 class="text-xl font-bold mb-3">UNIFIED COMPLIANCE PACK</h4>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-                Generate one combined client-ready dossier that satisfies both engineering inspectors and HSE safety officers simultaneously:
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Generate one combined report containing:
               </p>
-              <ul class="space-y-2 text-xs text-slate-300 font-medium">
-                <li class="flex items-center space-x-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                  <span>Weld certification records & NDT</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                  <span>RAMS coverage & worker signatures</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                  <span>Incident & near-miss history</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
-                  <span>Task-level photographic evidence</span>
-                </li>
+              <ul class="space-y-2 text-xs text-slate-300 font-medium list-disc list-inside">
+                <li>Weld certification records</li>
+                <li>RAMS coverage</li>
+                <li>Incident history</li>
+                <li>Task evidence</li>
               </ul>
-            </div>
-            <div class="mt-8 pt-4 border-t border-slate-700/60">
-              <span class="text-[11px] font-mono text-blue-400 uppercase tracking-wide">1-Tap Export &middot; Audit-Proof</span>
             </div>
           </div>
 
           <!-- Highlight 2: Cross-Domain Supervisor Dashboard -->
-          <div class="bg-gradient-to-br from-navy-900 to-navy-850 text-white rounded-2xl p-8 border border-slate-800 shadow-xl relative overflow-hidden flex flex-col justify-between">
-            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
+          <div class="reveal-init bg-navy-900 text-white rounded-2xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-xl bg-amber-500/30 border border-amber-400/40 text-amber-300 flex items-center justify-center font-bold mb-6">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg>
-              </div>
               <h4 class="text-xl font-bold mb-3">CROSS-DOMAIN SUPERVISOR DASHBOARD</h4>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-                A single control surface giving site leaders total visibility across all operations:
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Show:
               </p>
-              <ul class="space-y-2 text-xs text-slate-300 font-medium">
-                <li class="flex items-center space-x-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                  <span><strong>Quality Performance:</strong> First-time pass rate, NDT status</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                  <span><strong>Safety Performance:</strong> Daily audits, open actions, RAMS</span>
-                </li>
-                <li class="flex items-center space-x-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-                  <span><strong>Team Performance:</strong> Labour hours, certified allocations</span>
-                </li>
+              <ul class="space-y-2 text-xs text-slate-300 font-medium list-disc list-inside">
+                <li>Quality performance</li>
+                <li>Safety performance</li>
+                <li>Team performance</li>
               </ul>
-            </div>
-            <div class="mt-8 pt-4 border-t border-slate-700/60">
-              <span class="text-[11px] font-mono text-amber-400 uppercase tracking-wide">Unified Operations Telemetry</span>
             </div>
           </div>
 
           <!-- Highlight 3: Single Data Entry System -->
-          <div class="bg-gradient-to-br from-navy-900 to-navy-850 text-white rounded-2xl p-8 border border-slate-800 shadow-xl relative overflow-hidden flex flex-col justify-between">
-            <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+          <div class="reveal-init bg-navy-900 text-white rounded-2xl p-8 border border-slate-800 shadow-xl flex flex-col justify-between">
             <div>
-              <div class="w-12 h-12 rounded-xl bg-emerald-500/30 border border-emerald-400/40 text-emerald-300 flex items-center justify-center font-bold mb-6">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
-              </div>
               <h4 class="text-xl font-bold mb-3">SINGLE DATA ENTRY SYSTEM</h4>
-              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-                Information entered once by the supervisor on the shop floor or in the cherry picker automatically supports both quality and safety records.
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">
+                Information entered once automatically supports both quality and safety records.
               </p>
-              <div class="p-3.5 rounded-xl bg-navy-950/70 border border-slate-700 text-xs text-slate-300 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-slate-400">Data Input:</span>
-                  <span class="text-emerald-400 font-mono">1 Capture Event</span>
-                </div>
-                <div class="flex items-center justify-between">
-                  <span class="text-slate-400">Quality Output:</span>
-                  <span class="text-blue-300 font-mono">ISO 3834 Cert</span>
-                </div>
-                <div class="flex items-center justify-between">
-                  <span class="text-slate-400">Safety Output:</span>
-                  <span class="text-amber-300 font-mono">CDM Site Log</span>
-                </div>
-              </div>
-            </div>
-            <div class="mt-8 pt-4 border-t border-slate-700/60">
-              <span class="text-[11px] font-mono text-emerald-400 uppercase tracking-wide">Eliminate Duplicate Admin</span>
             </div>
           </div>
 
@@ -1185,13 +1021,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="max-w-3xl mb-16">
-        <span class="text-xs font-bold font-mono tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Workflow Architecture</span>
+      <div class="reveal-init max-w-3xl mb-16">
+        <span class="text-xs font-bold font-mono tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Workflow</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-900 tracking-tight mt-4 mb-4">
-          How It Works: 5 Steps to Complete Digital Compliance
+          How It Works
         </h2>
         <p class="text-lg text-slate-600 leading-relaxed">
-          From initial job docket generation to final client handover, TraceGuard secures every link in the physical-to-digital chain of custody.
+          A seamless 5-step workflow connecting task creation to complete compliance documentation.
         </p>
       </div>
 
@@ -1199,118 +1035,72 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
         
         <!-- STEP 1 -->
-        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all">
+        <div class="reveal-init bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="w-8 h-8 rounded-lg bg-navy-900 text-white font-mono font-bold text-xs flex items-center justify-center">01</span>
-              <span class="text-[10px] font-mono font-bold text-blue-600 uppercase">Project Setup</span>
+              <span class="text-[10px] font-mono font-bold text-blue-600 uppercase">Step 1</span>
             </div>
             <h3 class="text-base font-bold text-navy-900 mb-2">Create Project & Allocate Task</h3>
-            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-              Supervisor configures:
-            </p>
-            <ul class="text-xs space-y-1.5 text-slate-700 font-medium">
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Project Name & Client</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Site / Fabrication Bay</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Task & Weld Joints</span>
-              </li>
+            <p class="text-xs text-slate-500 mb-2 font-medium">Supervisor creates:</p>
+            <ul class="text-xs space-y-1.5 text-slate-700 font-medium list-disc list-inside mb-4">
+              <li>Project</li>
+              <li>Site</li>
+              <li>Task</li>
             </ul>
           </div>
-          <div class="mt-6 pt-3 border-t border-slate-200">
-            <span class="text-[11px] text-blue-700 font-semibold block">System generates unique QR-linked allocation record.</span>
+          <div class="pt-3 border-t border-slate-200">
+            <span class="text-[11px] text-blue-700 font-semibold block">System generates QR-linked allocation records.</span>
           </div>
         </div>
 
         <!-- STEP 2 -->
-        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all">
+        <div class="reveal-init bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="w-8 h-8 rounded-lg bg-navy-900 text-white font-mono font-bold text-xs flex items-center justify-center">02</span>
-              <span class="text-[10px] font-mono font-bold text-blue-600 uppercase">Resourcing</span>
+              <span class="text-[10px] font-mono font-bold text-blue-600 uppercase">Step 2</span>
             </div>
             <h3 class="text-base font-bold text-navy-900 mb-2">Assign Workforce</h3>
-            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-              Supervisor assigns:
-            </p>
-            <ul class="text-xs space-y-1.5 text-slate-700 font-medium">
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Worker Profile</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Verified Skills (CSCS)</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Weld Qualifications (ISO 9606)</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Calibrated Plant / Equipment</span>
-              </li>
+            <p class="text-xs text-slate-500 mb-2 font-medium">Assign:</p>
+            <ul class="text-xs space-y-1.5 text-slate-700 font-medium list-disc list-inside">
+              <li>Worker</li>
+              <li>Skills</li>
+              <li>Qualifications</li>
+              <li>Equipment</li>
             </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-slate-200">
-            <span class="text-[11px] text-blue-700 font-semibold block">Labour qualifications locked to task requirements.</span>
           </div>
         </div>
 
         <!-- STEP 3 -->
-        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all">
+        <div class="reveal-init bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="w-8 h-8 rounded-lg bg-navy-900 text-white font-mono font-bold text-xs flex items-center justify-center">03</span>
-              <span class="text-[10px] font-mono font-bold text-blue-600 uppercase">Field Capture</span>
+              <span class="text-[10px] font-mono font-bold text-blue-600 uppercase">Step 3</span>
             </div>
             <h3 class="text-base font-bold text-navy-900 mb-2">Capture Evidence</h3>
-            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-              Field operatives collect:
-            </p>
-            <ul class="text-xs space-y-1.5 text-slate-700 font-medium">
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Photos of weld passes</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>NDT Inspection results</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Signed RAMS documents</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Safety logs & digital approvals</span>
-              </li>
+            <p class="text-xs text-slate-500 mb-2 font-medium">Collect:</p>
+            <ul class="text-xs space-y-1.5 text-slate-700 font-medium list-disc list-inside">
+              <li>Photos</li>
+              <li>Inspection results</li>
+              <li>RAMS documents</li>
+              <li>Safety records</li>
+              <li>Approvals</li>
             </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-slate-200">
-            <span class="text-[11px] text-blue-700 font-semibold block">Captures 100% offline; syncs when online.</span>
           </div>
         </div>
 
         <!-- STEP 4 -->
-        <div class="bg-blue-50/70 rounded-2xl p-6 border-2 border-blue-600/40 shadow-sm flex flex-col justify-between hover:border-blue-600 transition-all">
+        <div class="reveal-init bg-blue-50/70 rounded-2xl p-6 border-2 border-blue-600/40 shadow-sm flex flex-col justify-between hover:border-blue-600 transition-all">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="w-8 h-8 rounded-lg bg-blue-600 text-white font-mono font-bold text-xs flex items-center justify-center">04</span>
-              <span class="text-[10px] font-mono font-bold text-blue-700 uppercase">Core Anchor</span>
+              <span class="text-[10px] font-mono font-bold text-blue-700 uppercase">Step 4</span>
             </div>
             <h3 class="text-base font-bold text-navy-900 mb-2">Build Digital Evidence Chain</h3>
-            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-              TraceGuard cryptographically links:
-            </p>
-            <div class="space-y-1.5 text-xs font-mono font-semibold text-slate-800">
+            <p class="text-xs text-slate-500 mb-2 font-medium">Connect:</p>
+            <div class="space-y-1 text-xs font-mono font-semibold text-slate-800">
               <div class="p-1 rounded bg-white border border-blue-200 text-center">Task</div>
               <div class="text-center text-blue-500 font-sans text-xs">&darr;</div>
               <div class="p-1 rounded bg-white border border-blue-200 text-center">Person</div>
@@ -1322,53 +1112,36 @@
               <div class="p-1 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 text-center">Compliance Evidence</div>
             </div>
           </div>
-          <div class="mt-4 pt-3 border-t border-blue-200">
-            <span class="text-[11px] text-blue-900 font-bold block">Immutable audit trail established.</span>
-          </div>
         </div>
 
         <!-- STEP 5 -->
-        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all">
+        <div class="reveal-init bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all">
           <div>
             <div class="flex items-center justify-between mb-4">
               <span class="w-8 h-8 rounded-lg bg-navy-900 text-white font-mono font-bold text-xs flex items-center justify-center">05</span>
-              <span class="text-[10px] font-mono font-bold text-blue-600 uppercase">Deliverables</span>
+              <span class="text-[10px] font-mono font-bold text-blue-600 uppercase">Step 5</span>
             </div>
             <h3 class="text-base font-bold text-navy-900 mb-2">Generate Reports</h3>
-            <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-              Instantly create:
-            </p>
-            <ul class="text-xs space-y-1.5 text-slate-700 font-medium">
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Quality Certificates (EN 10204 3.1)</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>CDM Safety Handover Reports</span>
-              </li>
-              <li class="flex items-center space-x-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                <span>Unified Compliance Packs</span>
-              </li>
+            <p class="text-xs text-slate-500 mb-2 font-medium">Create:</p>
+            <ul class="text-xs space-y-1.5 text-slate-700 font-medium list-disc list-inside">
+              <li>Quality certificates</li>
+              <li>Safety reports</li>
+              <li>Unified Compliance Packs</li>
             </ul>
-          </div>
-          <div class="mt-6 pt-3 border-t border-slate-200">
-            <span class="text-[11px] text-emerald-700 font-semibold block">Client audit ready in under 60 seconds.</span>
           </div>
         </div>
 
       </div>
 
       <!-- INTERACTIVE DIGITAL EVIDENCE CHAIN EXPLORER -->
-      <div class="rounded-2xl bg-navy-900 p-8 sm:p-10 border border-slate-800 text-white">
+      <div class="reveal-init rounded-2xl bg-navy-900 p-8 sm:p-10 border border-slate-800 text-white">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>
             <span class="text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">Interactive Chain Explorer</span>
-            <h3 class="text-xl sm:text-2xl font-bold mt-1">The TraceGuard Immutable 5-Link Chain</h3>
+            <h3 class="text-xl sm:text-2xl font-bold mt-1">The Complete Digital Evidence Chain</h3>
           </div>
           <p class="text-xs text-slate-400 max-w-sm">
-            Hover over any link below to inspect how physical site events are anchored into compliance records.
+            Select or hover over any link below to explore how physical operations connect to compliance evidence.
           </p>
         </div>
 
@@ -1378,31 +1151,31 @@
           <div data-step="task" class="chain-step-card cursor-pointer p-4 rounded-xl bg-navy-850 border border-slate-700 hover:border-blue-500 transition-all text-center">
             <span class="text-[10px] font-mono text-slate-400 block uppercase">Link 01</span>
             <h4 class="font-bold text-white text-sm mt-1">Task</h4>
-            <span class="text-[10px] text-blue-400 font-mono mt-1 inline-block">QR Entity</span>
+            <span class="text-[10px] text-blue-400 font-mono mt-1 inline-block">QR Work Order</span>
           </div>
 
           <div data-step="worker" class="chain-step-card cursor-pointer p-4 rounded-xl bg-navy-850 border border-slate-700 hover:border-blue-500 transition-all text-center">
             <span class="text-[10px] font-mono text-slate-400 block uppercase">Link 02</span>
             <h4 class="font-bold text-white text-sm mt-1">Worker</h4>
-            <span class="text-[10px] text-blue-400 font-mono mt-1 inline-block">ISO / CSCS Pass</span>
+            <span class="text-[10px] text-blue-400 font-mono mt-1 inline-block">Skills & Quals</span>
           </div>
 
           <div data-step="location" class="chain-step-card cursor-pointer p-4 rounded-xl bg-navy-850 border border-slate-700 hover:border-blue-500 transition-all text-center">
             <span class="text-[10px] font-mono text-slate-400 block uppercase">Link 03</span>
             <h4 class="font-bold text-white text-sm mt-1">Location</h4>
-            <span class="text-[10px] text-blue-400 font-mono mt-1 inline-block">Bay / Pier / Grid</span>
+            <span class="text-[10px] text-blue-400 font-mono mt-1 inline-block">Site & Bay</span>
           </div>
 
           <div data-step="date" class="chain-step-card cursor-pointer p-4 rounded-xl bg-navy-850 border border-slate-700 hover:border-blue-500 transition-all text-center">
             <span class="text-[10px] font-mono text-slate-400 block uppercase">Link 04</span>
-            <h4 class="font-bold text-white text-sm mt-1">Date & Time</h4>
-            <span class="text-[10px] text-blue-400 font-mono mt-1 inline-block">Immutable Stamp</span>
+            <h4 class="font-bold text-white text-sm mt-1">Date</h4>
+            <span class="text-[10px] text-blue-400 font-mono mt-1 inline-block">Audit Stamp</span>
           </div>
 
           <div data-step="evidence" class="chain-step-card cursor-pointer p-4 rounded-xl bg-navy-850 border border-slate-700 hover:border-blue-500 transition-all text-center">
             <span class="text-[10px] font-mono text-emerald-400 block uppercase">Link 05</span>
-            <h4 class="font-bold text-white text-sm mt-1">Compliance</h4>
-            <span class="text-[10px] text-emerald-400 font-mono mt-1 inline-block">Audit Dossier</span>
+            <h4 class="font-bold text-white text-sm mt-1">Compliance Evidence</h4>
+            <span class="text-[10px] text-emerald-400 font-mono mt-1 inline-block">Audit Pack</span>
           </div>
 
         </div>
@@ -1413,8 +1186,8 @@
             <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-blue-100 text-blue-800">QR-Linked Work Order</span>
             <span class="text-xs text-slate-400">Live Chain Connection: ACTIVE</span>
           </div>
-          <h4 class="font-bold text-slate-900 text-base mb-1 text-white">Task Entity #TG-7402</h4>
-          <p class="text-sm text-slate-300 leading-relaxed">Generated via supervisor QR code at Bay 4. Work item: BS EN 1090-2 Execution Class 3 structural girder weld. Hover over other chain links above to explore.</p>
+          <h4 class="font-bold text-white text-base mb-1">Task Entity #TG-7402</h4>
+          <p class="text-sm text-slate-300 leading-relaxed">Generated via supervisor QR code at Bay 4. Work item: BS EN 1090-2 Execution Class 3 structural girder weld. Select other chain links above to explore.</p>
         </div>
 
       </div>
@@ -1424,55 +1197,43 @@
 
 
   <!-- ========================================================================
-       5. MARKET PRICING SECTION
+       5. MARKET PRICING SECTION (Business model structure only - NO invented prices)
        ======================================================================== -->
   <section id="market-pricing" class="py-20 lg:py-28 bg-slate-50 border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="max-w-3xl mb-6">
-        <span class="text-xs font-bold font-mono tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Market Pricing Architecture</span>
+      <div class="reveal-init max-w-3xl mb-12">
+        <span class="text-xs font-bold font-mono tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Commercial Structure</span>
         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-900 tracking-tight mt-4 mb-4">
-          Structured for SME Fabrication & Construction Operations
+          Market Pricing
         </h2>
         <p class="text-lg text-slate-600 leading-relaxed">
-          The TraceGuard commercial model aligns directly with your team's real operational footprint. Select modular capability or deploy the combined enterprise platform.
+          Flexible commercial models structured specifically for SME fabrication companies and construction contractors.
         </p>
-      </div>
-
-      <!-- Pricing Notice Banner (adhering strictly to no invented numerical prices) -->
-      <div class="mb-12 p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center space-x-3 text-xs text-slate-600">
-        <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold flex-shrink-0">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <div>
-          <span class="font-bold text-navy-900">Commercial Framework:</span>
-          <span> Pricing is structured per active seat or managed site footprint to match SME cash flows. Exact seat counts and bespoke pilot parameters are finalized during pilot onboarding.</span>
-        </div>
       </div>
 
       <!-- 3 Primary Pricing Cards -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-16">
         
         <!-- PLAN 1: QUALITY MODULE -->
-        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+        <div class="reveal-init bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all duration-200">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono font-bold text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Plan 01</span>
-              <span class="text-xs font-semibold text-slate-500">Shop & QA Focused</span>
+              <span class="text-xs font-mono font-bold text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Plan 1</span>
             </div>
 
             <h3 class="text-2xl font-extrabold text-navy-900 mb-2">QUALITY MODULE</h3>
             
             <div class="my-6 p-4 rounded-xl bg-slate-50 border border-slate-100">
-              <span class="text-[10px] font-mono font-bold uppercase text-slate-400 block mb-1">Pricing Model</span>
-              <p class="text-base font-bold text-navy-900">Per active inspector or QA seat</p>
+              <span class="text-[10px] font-mono font-bold uppercase text-slate-400 block mb-1">Pricing Model:</span>
+              <p class="text-base font-bold text-navy-900">Per active inspector or QA seat.</p>
             </div>
 
             <div class="mb-6">
-              <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2 font-mono">Suitable For:</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2 font-mono">Suitable for:</span>
               <p class="text-xs text-slate-700 font-medium leading-relaxed">
-                Fabrication businesses requiring weld traceability, workshop QA managers, and coded welding facilities.
+                Fabrication businesses requiring weld traceability.
               </p>
             </div>
 
@@ -1485,7 +1246,7 @@
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span>Inspection records (Visual & NDT)</span>
+                  <span>Inspection records</span>
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
@@ -1493,38 +1254,37 @@
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span>Quality tracking & rework logs</span>
+                  <span>Quality tracking</span>
                 </li>
               </ul>
             </div>
           </div>
 
           <div class="mt-8 pt-6 border-t border-slate-100">
-            <button type="button" data-plan="Quality Module" class="open-pilot-modal w-full py-3.5 px-4 rounded-xl text-xs font-bold text-navy-900 bg-slate-100 hover:bg-slate-200 transition-colors">
-              Request Quality Pilot
+            <button type="button" data-plan="Quality Module" class="open-pilot-modal btn-secondary w-full py-3.5 px-4 rounded-xl text-xs font-bold text-navy-900 bg-slate-100 hover:bg-slate-200 transition-colors">
+              Request a Pilot
             </button>
           </div>
         </div>
 
         <!-- PLAN 2: SAFETY & RESOURCING MODULE -->
-        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all duration-200">
+        <div class="reveal-init bg-white rounded-2xl p-8 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all duration-200">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono font-bold text-amber-600 uppercase bg-amber-50 px-3 py-1 rounded border border-amber-100">Plan 02</span>
-              <span class="text-xs font-semibold text-slate-500">Site & CDM Focused</span>
+              <span class="text-xs font-mono font-bold text-amber-600 uppercase bg-amber-50 px-3 py-1 rounded border border-amber-100">Plan 2</span>
             </div>
 
-            <h3 class="text-2xl font-extrabold text-navy-900 mb-2">SAFETY & RESOURCING</h3>
+            <h3 class="text-2xl font-extrabold text-navy-900 mb-2">SAFETY & RESOURCING MODULE</h3>
             
             <div class="my-6 p-4 rounded-xl bg-slate-50 border border-slate-100">
-              <span class="text-[10px] font-mono font-bold uppercase text-slate-400 block mb-1">Pricing Model</span>
-              <p class="text-base font-bold text-navy-900">Per active site under management</p>
+              <span class="text-[10px] font-mono font-bold uppercase text-slate-400 block mb-1">Pricing Model:</span>
+              <p class="text-base font-bold text-navy-900">Per active site under management.</p>
             </div>
 
             <div class="mb-6">
-              <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2 font-mono">Suitable For:</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2 font-mono">Suitable for:</span>
               <p class="text-xs text-slate-700 font-medium leading-relaxed">
-                Construction contractors managing site operations, site managers, erection teams, and principal contractors.
+                Construction contractors managing site operations.
               </p>
             </div>
 
@@ -1533,7 +1293,7 @@
               <ul class="space-y-2.5 text-xs text-slate-700 font-medium">
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span>RAMS attachment & verification</span>
+                  <span>RAMS attachment</span>
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
@@ -1541,47 +1301,35 @@
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span>Equipment tracking (LOLER/PUWER)</span>
+                  <span>Equipment tracking</span>
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span>Safety reporting & incident logs</span>
+                  <span>Safety reporting</span>
                 </li>
               </ul>
             </div>
           </div>
 
           <div class="mt-8 pt-6 border-t border-slate-100">
-            <button type="button" data-plan="Safety & Resourcing Module" class="open-pilot-modal w-full py-3.5 px-4 rounded-xl text-xs font-bold text-navy-900 bg-slate-100 hover:bg-slate-200 transition-colors">
-              Request Site Pilot
+            <button type="button" data-plan="Safety & Resourcing Module" class="open-pilot-modal btn-secondary w-full py-3.5 px-4 rounded-xl text-xs font-bold text-navy-900 bg-slate-100 hover:bg-slate-200 transition-colors">
+              Request a Pilot
             </button>
           </div>
         </div>
 
-        <!-- PLAN 3: COMBINED PLATFORM (Featured) -->
-        <div class="bg-navy-900 rounded-2xl p-8 border-2 border-blue-500 text-white shadow-2xl relative flex flex-col justify-between">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-extrabold uppercase font-mono tracking-wider px-3.5 py-1 rounded-full shadow-md">
-            Most Recommended for SMEs
-          </div>
-
+        <!-- PLAN 3: COMBINED PLATFORM -->
+        <div class="reveal-init bg-navy-900 rounded-2xl p-8 border-2 border-blue-500 text-white shadow-2xl relative flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-mono font-bold text-blue-400 uppercase bg-blue-950 px-3 py-1 rounded border border-blue-800">Plan 03</span>
-              <span class="text-xs font-semibold text-emerald-400">Integrated Bundle</span>
+              <span class="text-xs font-mono font-bold text-blue-400 uppercase bg-blue-950 px-3 py-1 rounded border border-blue-800">Plan 3</span>
             </div>
 
             <h3 class="text-2xl font-extrabold text-white mb-2">COMBINED PLATFORM</h3>
             
             <div class="my-6 p-4 rounded-xl bg-navy-850 border border-slate-700">
-              <span class="text-[10px] font-mono font-bold uppercase text-blue-300 block mb-1">Pricing Model</span>
-              <p class="text-base font-bold text-white">Discounted bundle covering both modules</p>
-            </div>
-
-            <div class="mb-6">
-              <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2 font-mono">Suitable For:</span>
-              <p class="text-xs text-slate-300 font-medium leading-relaxed">
-                Integrated SME contractors whose supervisors manage both fabrication workshop quality and on-site erection safety.
-              </p>
+              <span class="text-[10px] font-mono font-bold uppercase text-blue-300 block mb-1">Pricing Model:</span>
+              <p class="text-base font-bold text-white">Discounted bundle covering both modules.</p>
             </div>
 
             <div class="space-y-3 pt-6 border-t border-slate-800">
@@ -1589,11 +1337,11 @@
               <ul class="space-y-2.5 text-xs text-slate-300 font-medium">
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span>Quality Lane (Full Suite)</span>
+                  <span>Quality Lane</span>
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span>Safety Lane (Full Suite)</span>
+                  <span>Safety Lane</span>
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
@@ -1601,19 +1349,19 @@
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span>Compliance reporting dossiers</span>
+                  <span>Compliance reporting</span>
                 </li>
                 <li class="flex items-center space-x-2.5">
                   <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                  <span>Single platform access & single sign-on</span>
+                  <span>Single platform access</span>
                 </li>
               </ul>
             </div>
           </div>
 
           <div class="mt-8 pt-6 border-t border-slate-800">
-            <button type="button" data-plan="Combined Platform" class="open-pilot-modal w-full py-3.5 px-4 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30">
-              Request Combined Pilot
+            <button type="button" data-plan="Combined Platform" class="open-pilot-modal btn-primary w-full py-3.5 px-4 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30">
+              Request a Pilot
             </button>
           </div>
         </div>
@@ -1621,46 +1369,32 @@
       </div>
 
       <!-- PRICING ADD-ONS GRID -->
-      <div class="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm">
+      <div class="reveal-init bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm">
         <div class="mb-8">
-          <span class="text-xs font-mono font-bold text-slate-500 uppercase">Enterprise Augmentation</span>
-          <h3 class="text-xl sm:text-2xl font-bold text-navy-900 mt-1">Platform Add-Ons</h3>
-          <p class="text-xs text-slate-600 mt-1">Extend TraceGuard capabilities for specialised commercial requirements.</p>
+          <h3 class="text-xl sm:text-2xl font-bold text-navy-900">ADD-ONS:</h3>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
-            <div class="flex items-center space-x-2 text-navy-900 font-bold text-sm mb-2">
-              <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
-              <span>Project Archive Tier</span>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed mb-3">
-              Extended evidence retention engineered for 12-year statutory liability and long-term structural warranties.
+            <h4 class="font-bold text-navy-900 text-sm mb-2">Project Archive Tier</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Extended evidence retention.
             </p>
-            <span class="text-[10px] font-mono font-semibold text-slate-500 bg-slate-200 px-2 py-0.5 rounded">12-Year Retention</span>
           </div>
 
           <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
-            <div class="flex items-center space-x-2 text-navy-900 font-bold text-sm mb-2">
-              <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/></svg>
-              <span>Compliance Export Add-on</span>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed mb-3">
-              Client-branded compliance reports, customized with Tier 1 contractor headers, logos, and custom sign-off covers.
+            <h4 class="font-bold text-navy-900 text-sm mb-2">Compliance Export Add-on</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Client branded compliance reports.
             </p>
-            <span class="text-[10px] font-mono font-semibold text-slate-500 bg-slate-200 px-2 py-0.5 rounded">White-Label Handover</span>
           </div>
 
           <div class="p-5 rounded-xl bg-slate-50 border border-slate-200">
-            <div class="flex items-center space-x-2 text-navy-900 font-bold text-sm mb-2">
-              <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-              <span>Data Export / API Access</span>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed mb-3">
-              Export structured data seamlessly into enterprise ERP, accounting systems, and project management tools.
+            <h4 class="font-bold text-navy-900 text-sm mb-2">Data Export/API Access</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Export structured data into ERP, accounting and project management tools.
             </p>
-            <span class="text-[10px] font-mono font-semibold text-slate-500 bg-slate-200 px-2 py-0.5 rounded">ERP / Accounting Sync</span>
           </div>
 
         </div>
@@ -1677,22 +1411,19 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center mb-16">
-        <span class="text-xs font-bold font-mono tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Clarifications & Details</span>
+      <div class="reveal-init text-center mb-16">
+        <span class="text-xs font-bold font-mono tracking-wider text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded border border-blue-100">Clarifications</span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight mt-4 mb-4">
           Frequently Asked Questions
         </h2>
-        <p class="text-base text-slate-600 max-w-xl mx-auto">
-          Everything you need to know about TraceGuard, its deployment, and compliance capabilities.
-        </p>
       </div>
 
       <!-- FAQ Accordion List -->
       <div class="space-y-4">
         
         <!-- Question 1 -->
-        <div class="faq-item bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
-          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none">
+        <div class="faq-item reveal-init bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none" aria-expanded="false">
             <span class="text-base sm:text-lg">What is TraceGuard?</span>
             <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -1704,8 +1435,8 @@
         </div>
 
         <!-- Question 2 -->
-        <div class="faq-item bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
-          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none">
+        <div class="faq-item reveal-init bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none" aria-expanded="false">
             <span class="text-base sm:text-lg">Who is TraceGuard designed for?</span>
             <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -1724,8 +1455,8 @@
         </div>
 
         <!-- Question 3 -->
-        <div class="faq-item bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
-          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none">
+        <div class="faq-item reveal-init bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none" aria-expanded="false">
             <span class="text-base sm:text-lg">Does TraceGuard work offline?</span>
             <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -1737,8 +1468,8 @@
         </div>
 
         <!-- Question 4 -->
-        <div class="faq-item bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
-          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none">
+        <div class="faq-item reveal-init bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none" aria-expanded="false">
             <span class="text-base sm:text-lg">What type of evidence can TraceGuard manage?</span>
             <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -1758,8 +1489,8 @@
         </div>
 
         <!-- Question 5 -->
-        <div class="faq-item bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
-          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none">
+        <div class="faq-item reveal-init bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none" aria-expanded="false">
             <span class="text-base sm:text-lg">Does TraceGuard replace inspectors?</span>
             <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -1771,8 +1502,8 @@
         </div>
 
         <!-- Question 6 -->
-        <div class="faq-item bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
-          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none">
+        <div class="faq-item reveal-init bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden transition-all duration-200">
+          <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between font-bold text-navy-900 hover:text-blue-600 focus:outline-none" aria-expanded="false">
             <span class="text-base sm:text-lg">How does TraceGuard improve audits?</span>
             <svg class="faq-icon w-5 h-5 text-slate-400 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -1790,13 +1521,38 @@
 
 
   <!-- ========================================================================
-       7. REQUEST A PILOT MODAL (Pure localStorage, zero backend)
+       CLOSING CALL TO ACTION SECTION
        ======================================================================== -->
-  <div id="pilotModal" class="hidden fixed inset-0 z-50 overflow-y-auto modal-backdrop flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-2xl max-w-xl w-full p-6 sm:p-8 border border-slate-200 relative my-8">
+  <section class="py-16 bg-navy-900 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="reveal-init max-w-3xl mx-auto space-y-6">
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          Ready to Connect Weld Quality and Site Safety?
+        </h2>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          Request a pilot to test TraceGuard's offline-first digital evidence chain directly on your fabrication or construction project.
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button type="button" class="open-pilot-modal btn-primary px-8 py-4 rounded-xl text-base font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-xl shadow-blue-600/30">
+            Request a Pilot
+          </button>
+          <a href="#platform" class="btn-secondary px-8 py-4 rounded-xl text-base font-bold bg-navy-850 hover:bg-navy-800 text-white border border-slate-700">
+            Explore Platform
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================
+       REQUEST A PILOT MODAL (No pre-entered data, sentence removed, localStorage preserved)
+       ======================================================================== -->
+  <div id="pilotModal" class="hidden fixed inset-0 z-50 overflow-y-auto modal-backdrop flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 sm:p-8 border border-slate-200 relative my-8">
       
       <!-- Close Button -->
-      <button type="button" class="close-pilot-modal absolute top-5 right-5 p-2 text-slate-400 hover:text-slate-700 rounded-lg">
+      <button type="button" class="close-pilot-modal absolute top-5 right-5 p-2 text-slate-400 hover:text-slate-700 rounded-lg" aria-label="Close modal">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -1806,33 +1562,33 @@
       <div id="pilotFormBox">
         <div class="mb-6">
           <span class="text-xs font-mono font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2.5 py-1 rounded">Pilot Program</span>
-          <h3 class="text-2xl font-extrabold text-navy-900 mt-2">Request a Pilot</h3>
+          <h3 id="modalTitle" class="text-2xl font-extrabold text-navy-900 mt-2">Request a Pilot</h3>
           <p class="text-xs text-slate-500 mt-1">
             Experience offline-first digital weld evidence & safety compliance on your live project.
           </p>
         </div>
 
-        <form id="pilotForm" class="space-y-4">
+        <form id="pilotForm" class="space-y-4" autocomplete="off">
           <input type="hidden" id="formInterestedModule" value="">
 
           <div>
             <label for="fullName" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Full Name *</label>
-            <input type="text" id="fullName" required placeholder="e.g. John Miller" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+            <input type="text" id="fullName" required placeholder="Enter your full name" value="" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-slate-900">
           </div>
 
           <div>
             <label for="phoneNumber" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Phone Number *</label>
-            <input type="tel" id="phoneNumber" required placeholder="e.g. +44 7700 900123" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+            <input type="tel" id="phoneNumber" required placeholder="Enter your phone number" value="" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-slate-900">
           </div>
 
           <div>
             <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Email Address *</label>
-            <input type="email" id="email" required placeholder="e.g. john@constructfab.co.uk" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+            <input type="email" id="email" required placeholder="name@company.com" value="" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-slate-900">
           </div>
 
           <div>
             <label for="organisationName" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Organisation Name *</label>
-            <input type="text" id="organisationName" required placeholder="e.g. Apex Structural Fabrication Ltd" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+            <input type="text" id="organisationName" required placeholder="Company or contractor name" value="" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 text-slate-900">
           </div>
 
           <div class="pt-2">
@@ -1840,10 +1596,6 @@
               Submit Pilot Request
             </button>
           </div>
-
-          <p class="text-[11px] text-slate-400 text-center mt-2">
-            Stored locally in your browser session (<code class="font-mono text-blue-600">localStorage</code>). No remote database or tracking cookies required.
-          </p>
         </form>
       </div>
 
@@ -1856,7 +1608,7 @@
         </div>
         <h3 class="text-2xl font-bold text-navy-900 mb-2">Pilot Request Logged!</h3>
         <p id="submissionSummaryText" class="text-xs text-slate-600 mb-6 max-w-sm mx-auto leading-relaxed">
-          Your request details have been securely recorded into browser localStorage.
+          Your request details have been registered. Our onboarding specialist will contact your team.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <button type="button" id="pilotSubmitAnotherBtn" class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs">
@@ -1873,51 +1625,17 @@
 
 
   <!-- ========================================================================
-       LOCALSTORAGE SUBMISSIONS INSPECTOR DRAWER (Client Developer / Verification Tool)
-       ======================================================================== -->
-  <div id="storageViewerDrawer" class="hidden fixed bottom-6 right-6 z-50 max-w-md w-full bg-navy-950 text-white rounded-2xl shadow-2xl border border-slate-700 p-5">
-    <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
-      <div class="flex items-center space-x-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-        <span class="text-xs font-mono font-bold">Browser LocalStorage Viewer</span>
-        <span id="storageCountBadge" class="text-[10px] font-mono bg-blue-600 px-1.5 py-0.5 rounded text-white font-bold">0</span>
-      </div>
-      <button id="closeStorageViewerBtn" class="text-slate-400 hover:text-white">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-    
-    <div id="storageViewerOutput" class="text-xs">
-      <!-- Output populated by JS -->
-    </div>
-
-    <div class="flex items-center justify-between mt-3 pt-3 border-t border-slate-800 text-[11px]">
-      <span class="text-slate-500 font-mono">Key: traceguard_pilot_submissions</span>
-      <button id="clearStorageBtn" type="button" class="text-rose-400 hover:text-rose-300 font-semibold">
-        Clear Submissions
-      </button>
-    </div>
-  </div>
-
-
-  <!-- ========================================================================
-       7. FOOTER SECTION
+       7. FOOTER SECTION (Clean Typographic Logo, NO icons, Exact Founders)
        ======================================================================== -->
   <footer class="bg-navy-950 text-slate-300 border-t border-slate-800 pt-16 pb-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
         
-        <!-- Brand & Tagline -->
+        <!-- Brand & Tagline (No logo icon) -->
         <div class="md:col-span-5 space-y-4">
-          <div class="flex items-center space-x-3">
-            <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white">
-              <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="m9 12 2 2 4-4" stroke="#38bdf8"/>
-              </svg>
-            </div>
-            <span class="text-2xl font-extrabold text-white tracking-tight">TRACE<span class="text-blue-500">GUARD</span></span>
+          <div class="flex items-center">
+            <span class="text-2xl font-black text-white tracking-tight">TRACE<span class="text-blue-500">GUARD</span></span>
           </div>
 
           <p class="text-sm text-slate-400 leading-relaxed max-w-sm">
@@ -1946,21 +1664,21 @@
           </ul>
         </div>
 
-        <!-- Founders Credit -->
+        <!-- Founders Information -->
         <div class="md:col-span-4 space-y-3">
-          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Founding Leadership</h4>
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Leadership</h4>
           
-          <div class="space-y-2 text-sm">
-            <div class="p-3 rounded-lg bg-navy-900 border border-slate-800">
-              <span class="text-xs text-blue-400 font-mono font-bold uppercase block">Founder</span>
-              <span class="text-white font-bold">Akashkumar Chaudhary</span>
-              <p class="text-xs text-slate-400 mt-0.5">Assistant Site Supervisor at Narmade Enterprise &middot; Former Welder Supervisor at Shree Mahashakti Engineering Works</p>
+          <div class="space-y-3 text-sm">
+            <div class="p-4 rounded-xl bg-navy-900 border border-slate-800">
+              <span class="text-xs text-blue-400 font-mono font-bold uppercase block mb-1">Founder</span>
+              <span class="text-white font-bold text-base block">Akashkumar Chaudhary</span>
+              <p class="text-xs text-slate-400 mt-1">Assistant Site Supervisor at Narmade Enterprise &bull; Former Welder Supervisor at Shree Mahashakti Engineering Works</p>
             </div>
 
-            <div class="p-3 rounded-lg bg-navy-900 border border-slate-800">
-              <span class="text-xs text-slate-400 font-mono font-bold uppercase block">Co-Founder</span>
-              <span class="text-white font-bold">Mahendra Chothabhai Chaudhari</span>
-              <p class="text-xs text-slate-400 mt-0.5">Bachelor of Commerce &middot; Financial Modelling & Commercial Operations</p>
+            <div class="p-4 rounded-xl bg-navy-900 border border-slate-800">
+              <span class="text-xs text-slate-400 font-mono font-bold uppercase block mb-1">Co-Founder</span>
+              <span class="text-white font-bold text-base block">Mahendra Chothabhai Chaudhari</span>
+              <p class="text-xs text-slate-400 mt-1">Bachelor of Commerce &bull; Financial Management & Commercial Operations</p>
             </div>
           </div>
         </div>
@@ -1970,13 +1688,7 @@
       <!-- Bottom Bar -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
         <p>&copy; 2026 TraceGuard. All rights reserved. UK Construction Technology SaaS.</p>
-        
-        <div class="flex items-center space-x-4">
-          <button id="toggleStorageViewerBtn" type="button" class="text-slate-400 hover:text-blue-400 text-xs flex items-center space-x-1.5 transition-colors">
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h4"/></svg>
-            <span>Inspect Stored Submissions</span>
-          </button>
-        </div>
+        <p class="text-slate-600">Unified Weld-Quality & Site-Safety Evidence Platform</p>
       </div>
 
     </div>

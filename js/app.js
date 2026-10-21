@@ -1,21 +1,104 @@
 /**
  * TRACEGUARD - Unified Weld-Quality and Site-Safety Evidence Platform
- * Frontend Controller (Vanilla JavaScript)
+ * Frontend Interactive Controller (Vanilla JavaScript)
  * Strictly client-side, zero backend / zero database
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initStickyHeader();
+  initActiveNavHighlight();
+  initScrollReveals();
   initMobileNav();
-  initFaqAccordion();
-  initPilotModal();
   initHeroPreviewToggle();
   initPlatformTabs();
   initEvidenceChainInteraction();
-  initSubmissionsViewer();
+  initFaqAccordion();
+  initPilotModal();
 });
 
 /* ==========================================================================
-   1. MOBILE NAVIGATION
+   1. STICKY HEADER COMPACT & SCROLL ELEVATION
+   ========================================================================== */
+function initStickyHeader() {
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  const handleScroll = () => {
+    if (window.scrollY > 40) {
+      header.classList.add('header-compact');
+    } else {
+      header.classList.remove('header-compact');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+}
+
+/* ==========================================================================
+   2. ACTIVE NAVIGATION HIGHLIGHT ON SCROLL
+   ========================================================================== */
+function initActiveNavHighlight() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.desktop-nav-link');
+
+  if (!sections.length || !navLinks.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('text-blue-600', 'font-bold');
+            link.classList.remove('text-slate-600');
+          } else {
+            link.classList.remove('text-blue-600', 'font-bold');
+            link.classList.add('text-slate-600');
+          }
+        });
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(section => observer.observe(section));
+}
+
+/* ==========================================================================
+   3. SCROLL REVEAL ANIMATIONS (IntersectionObserver)
+   ========================================================================== */
+function initScrollReveals() {
+  // If user prefers reduced motion, skip animations
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal-init').forEach(el => {
+      el.classList.add('reveal-visible');
+    });
+    return;
+  }
+
+  const reveals = document.querySelectorAll('.reveal-init');
+  if (!reveals.length) return;
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-visible');
+        observer.unobserve(entry.target); // Reveal only once
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  reveals.forEach(el => revealObserver.observe(el));
+}
+
+/* ==========================================================================
+   4. MOBILE NAVIGATION DRAWER
    ========================================================================== */
 function initMobileNav() {
   const menuBtn = document.getElementById('mobileMenuBtn');
@@ -28,11 +111,13 @@ function initMobileNav() {
   const openMenu = () => {
     mobileMenu.classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
+    if (closeBtn) closeBtn.focus();
   };
 
   const closeMenu = () => {
     mobileMenu.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
+    menuBtn.focus();
   };
 
   menuBtn.addEventListener('click', openMenu);
@@ -41,53 +126,22 @@ function initMobileNav() {
   navLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
-}
 
-/* ==========================================================================
-   2. FAQ ACCORDION
-   ========================================================================== */
-function initFaqAccordion() {
-  const faqItems = document.querySelectorAll('.faq-item');
+  // Close on backdrop click
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) closeMenu();
+  });
 
-  faqItems.forEach(item => {
-    const trigger = item.querySelector('.faq-trigger');
-    const content = item.querySelector('.faq-content');
-    const icon = item.querySelector('.faq-icon');
-
-    if (!trigger || !content) return;
-
-    trigger.addEventListener('click', () => {
-      const isOpen = !content.classList.contains('hidden');
-
-      // Close all other items for clean accordion effect
-      faqItems.forEach(otherItem => {
-        const otherContent = otherItem.querySelector('.faq-content');
-        const otherIcon = otherItem.querySelector('.faq-icon');
-        if (otherContent && otherContent !== content) {
-          otherContent.classList.add('hidden');
-          if (otherIcon) {
-            otherIcon.classList.remove('rotate-180');
-          }
-          otherItem.classList.remove('border-blue-600', 'bg-blue-50/40');
-        }
-      });
-
-      // Toggle current
-      if (isOpen) {
-        content.classList.add('hidden');
-        if (icon) icon.classList.remove('rotate-180');
-        item.classList.remove('border-blue-600', 'bg-blue-50/40');
-      } else {
-        content.classList.remove('hidden');
-        if (icon) icon.classList.add('rotate-180');
-        item.classList.add('border-blue-600', 'bg-blue-50/40');
-      }
-    });
+  // Escape key closes mobile menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+      closeMenu();
+    }
   });
 }
 
 /* ==========================================================================
-   3. HERO VISUAL PREVIEW TOGGLE (Quality vs Safety Lane)
+   5. HERO VISUAL PREVIEW TOGGLE (Quality Lane vs Safety Lane)
    ========================================================================== */
 function initHeroPreviewToggle() {
   const toggleQuality = document.getElementById('heroToggleQuality');
@@ -97,7 +151,7 @@ function initHeroPreviewToggle() {
 
   if (!toggleQuality || !toggleSafety || !viewQuality || !viewSafety) return;
 
-  toggleQuality.addEventListener('click', () => {
+  const setQuality = () => {
     toggleQuality.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
     toggleQuality.classList.remove('text-slate-400', 'hover:text-white');
 
@@ -106,9 +160,9 @@ function initHeroPreviewToggle() {
 
     viewQuality.classList.remove('hidden');
     viewSafety.classList.add('hidden');
-  });
+  };
 
-  toggleSafety.addEventListener('click', () => {
+  const setSafety = () => {
     toggleSafety.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
     toggleSafety.classList.remove('text-slate-400', 'hover:text-white');
 
@@ -117,11 +171,14 @@ function initHeroPreviewToggle() {
 
     viewSafety.classList.remove('hidden');
     viewQuality.classList.add('hidden');
-  });
+  };
+
+  toggleQuality.addEventListener('click', setQuality);
+  toggleSafety.addEventListener('click', setSafety);
 }
 
 /* ==========================================================================
-   4. PLATFORM MODULES FILTER / TABS
+   6. PLATFORM MODULES FILTER / TABS
    ========================================================================== */
 function initPlatformTabs() {
   const tabButtons = document.querySelectorAll('.platform-tab-btn');
@@ -137,19 +194,21 @@ function initPlatformTabs() {
       tabButtons.forEach(b => {
         b.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
         b.classList.add('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+        b.setAttribute('aria-selected', 'false');
       });
 
       btn.classList.add('bg-blue-600', 'text-white', 'shadow-md');
       btn.classList.remove('bg-slate-100', 'text-slate-700', 'hover:bg-slate-200');
+      btn.setAttribute('aria-selected', 'true');
 
-      // Filter or highlight cards
+      // Filter cards
       moduleCards.forEach(card => {
         if (targetModule === 'all' || card.dataset.module === targetModule) {
-          card.classList.remove('opacity-25', 'grayscale', 'scale-95');
+          card.classList.remove('opacity-25', 'grayscale', 'scale-98');
           card.classList.add('opacity-100', 'scale-100');
-          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          card.style.display = '';
         } else {
-          card.classList.add('opacity-25', 'grayscale', 'scale-95');
+          card.classList.add('opacity-25', 'grayscale', 'scale-98');
           card.classList.remove('opacity-100', 'scale-100');
         }
       });
@@ -158,7 +217,7 @@ function initPlatformTabs() {
 }
 
 /* ==========================================================================
-   5. DIGITAL EVIDENCE CHAIN INTERACTION
+   7. DIGITAL EVIDENCE CHAIN INTERACTION
    ========================================================================== */
 function initEvidenceChainInteraction() {
   const chainNodes = document.querySelectorAll('.chain-step-card');
@@ -194,28 +253,81 @@ function initEvidenceChainInteraction() {
     }
   };
 
+  const updateCard = (stepKey, node) => {
+    const data = nodeDetails[stepKey];
+    if (data) {
+      chainNodes.forEach(n => n.classList.remove('ring-2', 'ring-blue-600', 'bg-blue-50/50'));
+      node.classList.add('ring-2', 'ring-blue-600', 'bg-blue-50/50');
+      chainSummary.innerHTML = `
+        <div class="flex items-center justify-between gap-3 mb-2 flex-wrap">
+          <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-blue-100 text-blue-800">${data.badge}</span>
+          <span class="text-xs text-slate-400">Live Chain Connection: ACTIVE</span>
+        </div>
+        <h4 class="font-bold text-white text-base mb-1">${data.title}</h4>
+        <p class="text-sm text-slate-300 leading-relaxed">${data.detail}</p>
+      `;
+    }
+  };
+
   chainNodes.forEach(node => {
     node.addEventListener('mouseenter', () => {
       const stepKey = node.dataset.step;
-      const data = nodeDetails[stepKey];
-      if (data) {
-        chainNodes.forEach(n => n.classList.remove('ring-2', 'ring-blue-600', 'bg-blue-50/50'));
-        node.classList.add('ring-2', 'ring-blue-600', 'bg-blue-50/50');
-        chainSummary.innerHTML = `
-          <div class="flex items-center justify-between gap-3 mb-2 flex-wrap">
-            <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-blue-100 text-blue-800">${data.badge}</span>
-            <span class="text-xs text-slate-400">Live Chain Connection: ACTIVE</span>
-          </div>
-          <h4 class="font-bold text-slate-900 text-base mb-1">${data.title}</h4>
-          <p class="text-sm text-slate-600 leading-relaxed">${data.detail}</p>
-        `;
+      updateCard(stepKey, node);
+    });
+    node.addEventListener('click', () => {
+      const stepKey = node.dataset.step;
+      updateCard(stepKey, node);
+    });
+  });
+}
+
+/* ==========================================================================
+   8. FAQ ACCORDION (Accessible & Smooth)
+   ========================================================================== */
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const trigger = item.querySelector('.faq-trigger');
+    const content = item.querySelector('.faq-content');
+    const icon = item.querySelector('.faq-icon');
+
+    if (!trigger || !content) return;
+
+    trigger.addEventListener('click', () => {
+      const isOpen = !content.classList.contains('hidden');
+
+      // Close all others for a tidy accordion
+      faqItems.forEach(otherItem => {
+        const otherContent = otherItem.querySelector('.faq-content');
+        const otherIcon = otherItem.querySelector('.faq-icon');
+        const otherTrigger = otherItem.querySelector('.faq-trigger');
+        if (otherContent && otherContent !== content) {
+          otherContent.classList.add('hidden');
+          if (otherIcon) otherIcon.classList.remove('rotate-180');
+          if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+          otherItem.classList.remove('border-blue-500', 'bg-blue-50/30');
+        }
+      });
+
+      // Toggle current
+      if (isOpen) {
+        content.classList.add('hidden');
+        if (icon) icon.classList.remove('rotate-180');
+        trigger.setAttribute('aria-expanded', 'false');
+        item.classList.remove('border-blue-500', 'bg-blue-50/30');
+      } else {
+        content.classList.remove('hidden');
+        if (icon) icon.classList.add('rotate-180');
+        trigger.setAttribute('aria-expanded', 'true');
+        item.classList.add('border-blue-500', 'bg-blue-50/30');
       }
     });
   });
 }
 
 /* ==========================================================================
-   6. REQUEST A PILOT MODAL & LOCALSTORAGE ENGINE
+   9. REQUEST A PILOT MODAL & LOCALSTORAGE ENGINE
    ========================================================================== */
 const STORAGE_KEY = 'traceguard_pilot_submissions';
 
@@ -233,16 +345,20 @@ function initPilotModal() {
   const openModal = (contextPlan = '') => {
     modal.classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
-    
-    // Optionally pre-select context note
+
     const contextInput = document.getElementById('formInterestedModule');
     if (contextInput && contextPlan) {
       contextInput.value = contextPlan;
     }
-    
-    // Ensure form is visible, success box hidden
+
     if (formBox) formBox.classList.remove('hidden');
     if (successBox) successBox.classList.add('hidden');
+
+    // Auto-focus first input
+    const firstInput = document.getElementById('fullName');
+    if (firstInput) {
+      setTimeout(() => firstInput.focus(), 100);
+    }
   };
 
   const closeModal = () => {
@@ -280,20 +396,22 @@ function initPilotModal() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const fullName = document.getElementById('fullName').value.trim();
-    const phoneNumber = document.getElementById('phoneNumber').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const organisationName = document.getElementById('organisationName').value.trim();
+    const fullNameInput = document.getElementById('fullName');
+    const phoneNumberInput = document.getElementById('phoneNumber');
+    const emailInput = document.getElementById('email');
+    const orgInput = document.getElementById('organisationName');
 
-    // Basic client validation
+    const fullName = fullNameInput ? fullNameInput.value.trim() : '';
+    const phoneNumber = phoneNumberInput ? phoneNumberInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const organisationName = orgInput ? orgInput.value.trim() : '';
+
     if (!fullName || !phoneNumber || !email || !organisationName) {
       alert('Please fill in all required fields.');
       return;
     }
 
-    // Submission Date/Time
-    const now = new Date();
-    const submissionDateTime = now.toISOString();
+    const submissionDateTime = new Date().toISOString();
 
     const newSubmission = {
       fullName,
@@ -303,22 +421,15 @@ function initPilotModal() {
       submissionDateTime
     };
 
-    // Save to localStorage strictly adhering to instructions:
-    // - Store submissions inside browser localStorage.
-    // - Save multiple submissions.
-    // - Never overwrite previous submissions.
-    // - Add every new submission into an array.
+    // Store submissions in browser localStorage array (never overwrite)
     try {
       let existing = [];
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         try {
           existing = JSON.parse(stored);
-          if (!Array.isArray(existing)) {
-            existing = [];
-          }
+          if (!Array.isArray(existing)) existing = [];
         } catch (err) {
-          console.warn('Could not parse existing submissions, resetting to fresh array', err);
           existing = [];
         }
       }
@@ -326,21 +437,19 @@ function initPilotModal() {
       existing.push(newSubmission);
       localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
 
-      // Show success screen
+      // Display polished success view
       if (formBox) formBox.classList.add('hidden');
       if (successBox) successBox.classList.remove('hidden');
 
-      // Populate success readout
       const summaryElem = document.getElementById('submissionSummaryText');
       if (summaryElem) {
-        summaryElem.textContent = `Recorded for ${organisationName} (${fullName}) at ${new Date(submissionDateTime).toLocaleString('en-GB')}. Stored locally in browser.`;
+        summaryElem.textContent = `Thank you, ${fullName}. Your pilot request for ${organisationName} has been received. Our team will contact you shortly via ${email}.`;
       }
 
       form.reset();
-      updateSubmissionsDrawerUI();
     } catch (err) {
       console.error('Storage error:', err);
-      alert('Could not write to localStorage. Please check browser storage permissions.');
+      alert('Could not record submission. Please check your browser storage settings.');
     }
   });
 
@@ -348,79 +457,8 @@ function initPilotModal() {
     resetBtn.addEventListener('click', () => {
       if (successBox) successBox.classList.add('hidden');
       if (formBox) formBox.classList.remove('hidden');
+      const firstInput = document.getElementById('fullName');
+      if (firstInput) firstInput.focus();
     });
   }
-}
-
-/* ==========================================================================
-   7. LOCAL STORAGE SUBMISSIONS VIEWER (Verification & Inspection Drawer)
-   ========================================================================== */
-function initSubmissionsViewer() {
-  const toggleBtn = document.getElementById('toggleStorageViewerBtn');
-  const drawer = document.getElementById('storageViewerDrawer');
-  const closeBtn = document.getElementById('closeStorageViewerBtn');
-  const clearBtn = document.getElementById('clearStorageBtn');
-
-  if (!drawer) return;
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      drawer.classList.toggle('hidden');
-      updateSubmissionsDrawerUI();
-    });
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      drawer.classList.add('hidden');
-    });
-  }
-
-  if (clearBtn) {
-    clearBtn.addEventListener('click', () => {
-      if (confirm('Are you sure you want to clear all pilot submissions stored in this browser?')) {
-        localStorage.removeItem(STORAGE_KEY);
-        updateSubmissionsDrawerUI();
-      }
-    });
-  }
-
-  updateSubmissionsDrawerUI();
-}
-
-function updateSubmissionsDrawerUI() {
-  const outputElem = document.getElementById('storageViewerOutput');
-  const countBadge = document.getElementById('storageCountBadge');
-  if (!outputElem) return;
-
-  let submissions = [];
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored) {
-    try {
-      submissions = JSON.parse(stored);
-    } catch (e) {
-      submissions = [];
-    }
-  }
-
-  if (countBadge) {
-    countBadge.textContent = submissions.length;
-  }
-
-  if (submissions.length === 0) {
-    outputElem.innerHTML = `
-      <div class="p-6 text-center text-slate-400">
-        <svg class="w-8 h-8 mx-auto mb-2 text-slate-400 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
-        </svg>
-        <p class="text-sm">No pilot requests stored yet.</p>
-        <p class="text-xs text-slate-400 mt-1">Submit the "Request a Pilot" form to see live entries populate here.</p>
-      </div>
-    `;
-    return;
-  }
-
-  outputElem.innerHTML = `
-    <pre class="bg-slate-900 text-emerald-400 p-4 rounded-lg text-xs overflow-x-auto font-mono max-h-80 leading-relaxed">${JSON.stringify(submissions, null, 2)}</pre>
-  `;
 }

@@ -1,6 +1,6 @@
 /* ==========================================================================
    TRACEGUARD - Unified Weld-Quality and Site-Safety Evidence Platform
-   Custom Stylesheet & Design Tokens
+   Premium UK B2B SaaS Design System & Stylesheet
    ========================================================================== */
 
 :root {
@@ -9,6 +9,7 @@
   --navy-850: #0e1a38;
   --navy-800: #14244a;
   --navy-700: #1d3365;
+  --steel-950: #080d1a;
   --steel-900: #0f172a;
   --steel-800: #1e293b;
   --steel-700: #334155;
@@ -34,47 +35,37 @@ html {
   background-color: #ffffff;
 }
 
-/* Custom scrollbar */
+/* Section scroll margins so sticky header doesn't cover headings */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #94a3b8;
 }
 
-/* Code / Monospace styling */
+/* Monospace Utility */
 .font-mono-tag {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
-/* Glassmorphism & Cards */
-.glass-panel {
-  background: rgba(11, 19, 43, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.glass-panel-light {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-}
-
-/* Industrial Grid Pattern */
+/* Industrial Grid Background Patterns */
 .bg-grid-pattern {
   background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
 }
 
 .bg-dark-grid {
@@ -84,23 +75,60 @@ html {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
-/* Weld arc glow animation */
+/* Subtle Dot Matrix */
+.bg-dot-matrix {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Compact Sticky Header Transition */
+header.header-compact {
+  height: 4.25rem !important;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px -2px rgba(11, 19, 43, 0.08);
+  border-bottom-color: rgba(226, 232, 240, 0.9);
+}
+
+header.header-compact .header-inner {
+  height: 4.25rem !important;
+}
+
+/* Hero Glow Keyframe */
+@keyframes ambientGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08) translateY(-8px);
+  }
+}
+
+.animate-ambient-glow {
+  animation: ambientGlow 6s ease-in-out infinite;
+}
+
+/* Pulse Arc Animation */
 @keyframes arcPulse {
   0%, 100% {
-    opacity: 0.35;
+    opacity: 0.4;
     transform: scale(1);
   }
   50% {
-    opacity: 0.75;
-    transform: scale(1.05);
+    opacity: 0.85;
+    transform: scale(1.04);
   }
 }
 
 .animate-arc-pulse {
-  animation: arcPulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: arcPulse 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@keyframes subtleFloat {
+/* Subtle Floating Element */
+@keyframes floatSlow {
   0%, 100% {
     transform: translateY(0px);
   }
@@ -109,65 +137,102 @@ html {
   }
 }
 
-.animate-subtle-float {
-  animation: subtleFloat 5s ease-in-out infinite;
+.animate-float-slow {
+  animation: floatSlow 4.5s ease-in-out infinite;
 }
+
+/* Reveal on Scroll Transitions */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Stagger Children reveals */
+.stagger-1 { transition-delay: 80ms; }
+.stagger-2 { transition-delay: 160ms; }
+.stagger-3 { transition-delay: 240ms; }
+.stagger-4 { transition-delay: 320ms; }
+.stagger-5 { transition-delay: 400ms; }
 
 /* Interactive Card Transitions */
 .feature-card {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.22s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px -8px rgba(11, 19, 43, 0.09), 0 4px 12px -2px rgba(11, 19, 43, 0.04);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(11, 19, 43, 0.08), 0 4px 12px -2px rgba(11, 19, 43, 0.04);
+  border-color: #cbd5e1;
 }
 
-/* Evidence Chain Flow Step Connectors */
-.evidence-chain-node {
-  position: relative;
+/* Button Micro-interactions */
+.btn-primary {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.18s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 10px 24px -4px rgba(37, 99, 235, 0.35);
+}
+.btn-primary:active {
+  transform: translateY(0px);
 }
 
-@media (min-width: 1024px) {
-  .evidence-chain-node:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -24px;
-    width: 24px;
-    height: 2px;
-    background: repeating-linear-gradient(90deg, #94a3b8, #94a3b8 4px, transparent 4px, transparent 8px);
-    transform: translateY(-50%);
-  }
+.btn-secondary {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.18s ease, 
+              border-color 0.18s ease;
+}
+.btn-secondary:hover {
+  transform: translateY(-1.5px);
+  border-color: #94a3b8;
+}
+.btn-secondary:active {
+  transform: translateY(0px);
 }
 
-/* Modal Blur & Transitions */
+/* Modal Backdrop */
 .modal-backdrop {
   background-color: rgba(6, 12, 24, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* Accordion Smooth Transitions */
-.accordion-content {
-  transition: max-height 0.3s ease-out, opacity 0.25s ease-out;
+/* Focus Visibility for Accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }
 
-/* Highlight badge */
-.badge-safety {
-  background-color: #FEF3C7;
-  color: #92400E;
-  border: 1px solid #FDE68A;
-}
+/* Reduced Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 
-.badge-quality {
-  background-color: #DBEAFE;
-  color: #1E40AF;
-  border: 1px solid #BFDBFE;
-}
-
-.badge-audit {
-  background-color: #D1FAE5;
-  color: #065F46;
-  border: 1px solid #A7F3D0;
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
